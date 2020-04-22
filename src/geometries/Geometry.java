@@ -5,7 +5,7 @@ import primitives.*;
 /**
  * Interface for all Geometry Objects.
  */
-interface Geometry {
+interface Geometry extends Intersectable {
     /**
      * normal getter
      * @param point3D 3D point
