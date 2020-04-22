@@ -65,6 +65,7 @@ class SphereTest {
 
         assertEquals("TC04: Wrong number of points", 0, result.size());
 
+
         // =============== Boundary Values Tests ==================
 
         // **** Group: Ray's line crosses the sphere (but not the center)
