@@ -54,6 +54,7 @@ class SphereTest {
 
         p1 = new Point3D(0.5, 0, 0.96824583655);
 
+
         result = sphere.findIntsersections(new Ray(new Point3D(0.5, 0, 0), new Vector(0, 0, 1)));
 
         assertEquals("TC03: Wrong number of points", 1, result.size());
