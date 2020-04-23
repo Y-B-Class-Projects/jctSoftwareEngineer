@@ -1,7 +1,10 @@
 package geometries;
 
 import primitives.Point3D;
+import primitives.Ray;
 import primitives.Vector;
+
+import java.util.List;
 
 /**
  * Sphere class represent a Sphere in the space by center point and radius
@@ -56,5 +59,10 @@ public class Sphere extends RadialGeometry {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    @Override
+    public List<Point3D> findIntsersections(Ray ray) {
+        return null;
     }
 }

@@ -4,6 +4,8 @@ import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
 
+import java.util.List;
+
 /**
  * Tube class represent a Tube in the space by radius and ray
  */
@@ -64,5 +66,10 @@ public class Tube extends RadialGeometry {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    @Override
+    public List<Point3D> findIntsersections(Ray ray) {
+        return null;
     }
 }

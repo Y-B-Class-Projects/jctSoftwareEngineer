@@ -1,7 +1,10 @@
 package geometries;
 
 import primitives.Point3D;
+import primitives.Ray;
 import primitives.Vector;
+
+import java.util.List;
 
 /**
  * Plane class represent a plane in the space by 3D-Point and normal Vector
@@ -15,9 +18,9 @@ public class Plane implements Geometry {
 
     /**
      * Constructs and initialized a Plane by 3 points.
-     * @param x point
-     * @param y point for normal
-     * @param z point for normal
+     * @param p1 point
+     * @param p2 point for normal
+     * @param p3 point for normal
      */
     public Plane(Point3D p1 , Point3D p2 , Point3D p3)
     {
@@ -74,5 +77,10 @@ public class Plane implements Geometry {
                 "_p=" + _p +
                 ", _normal=" + _normal +
                 '}';
+    }
+
+    @Override
+    public List<Point3D> findIntsersections(Ray ray) {
+        return null;
     }
 }
