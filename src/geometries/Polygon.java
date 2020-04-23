@@ -10,7 +10,7 @@ import static primitives.Util.*;
  *
  * @author Dan
  */
-public class Polygon implements geometry {
+public class Polygon implements Geometry {
     /**
      * List of polygon's vertices
      */

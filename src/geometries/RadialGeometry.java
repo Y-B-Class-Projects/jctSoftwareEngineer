@@ -6,7 +6,7 @@ import primitives.Vector;
 /**
  * RadialGeometry class is an abstract class for all geometric shapes in space that have a radius
  */
-public abstract class RadialGeometry implements geometry
+public abstract class RadialGeometry implements Geometry
 {
     /** radius of the object */
     protected double _radius;

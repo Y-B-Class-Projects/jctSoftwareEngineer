@@ -4,7 +4,10 @@ import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static primitives.Util.alignZero;
 
 /**
  * Sphere class represent a Sphere in the space by center point and radius
@@ -63,6 +66,38 @@ public class Sphere extends RadialGeometry {
 
     @Override
     public List<Point3D> findIntsersections(Ray ray) {
-        return null;
+        Point3D P0 = ray.get_p0();
+        Vector v = ray.get_dir();
+
+        //Vector P = P0.add(V.scale())
+
+        Vector u = _center.subtruct(P0); //vector from P0 to O
+        double tm = v.dotProduct(u); // length on vector v from P0 to O (proj-u on v).
+        double d = Math.sqrt(u.lengthSquared() - tm * tm); // Distance between point O and continuation of vector v
+
+        if(d >= _radius) //if the continuation of vector v inside the Sphere
+            return null;
+        else {
+            double th = Math.sqrt(_radius * _radius - d * d); //
+
+            List<Point3D> result = new ArrayList<>();
+
+            double t1 = alignZero(tm + th);
+            double t2 = alignZero(tm - th);
+
+            if(t1 < 0 && t2 < 0)
+                return  null;
+
+            if (t1 > 0) {
+
+                result.add(P0.add(v.scale(t1)));
+            }
+            if (t1 != t2) {
+                if (t2 > 0) {
+                    result.add(P0.add(v.scale(t2)));
+                }
+            }
+            return result;
+        }
     }
 }

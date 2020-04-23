@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Plane class represent a plane in the space by 3D-Point and normal Vector
  */
-public class Plane implements geometry {
+public class Plane implements Geometry {
 
     /** point*/
     Point3D _p;
