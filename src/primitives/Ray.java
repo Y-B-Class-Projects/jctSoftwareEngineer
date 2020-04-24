@@ -54,6 +54,15 @@ public class Ray {
         return new Vector(_dir);
     }
 
+    /***
+     *function to evaluate the size of the Ray, P = p0 + t*v
+     * @param t scalar
+     * @return size of the Ray
+     */
+    public Point3D getPoint(double t) {
+
+        return new Point3D(this._p0).add(this._dir.scale(t));
+    }
     /******** ToString **********/
 
     /**

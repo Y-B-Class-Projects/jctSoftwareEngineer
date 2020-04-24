@@ -3,6 +3,7 @@ package geometries;
 import primitives.Point3D;
 import primitives.Ray;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Geometries implements Intersectable {
@@ -35,13 +36,23 @@ public class Geometries implements Intersectable {
     }
 
     /***
-     * function to check intersection with given ray and all the geometries object
+     * function to add all the intersection that stores in the _geometriesList
+     * to a list, using iterator principle that run for each Geometry element
      * @param ray to check for intersections with this ray
      * @return all the intersection in the objects group, when no intersections return null.
      */
     @Override
     public List<Point3D> findIntsersections(Ray ray) {
-        return null;
+        List<Point3D> intersections = null;
+        for (Intersectable geometry : _geometriesList) {
+            List<Point3D> tempIntersections = geometry.findIntsersections(ray);
+            if (tempIntersections != null) {
+                if (intersections == null)
+                    intersections = new ArrayList<Point3D>();
+                intersections.addAll(tempIntersections);
+            }
+        }
+        return intersections;
     }
 
 }
