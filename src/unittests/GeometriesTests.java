@@ -1,17 +1,14 @@
 package unittests;
-import org.junit.*;
 import geometries.Geometries;
 import geometries.Plane;
 import geometries.Sphere;
-import org.junit.jupiter.api.Test;
-import org.junit.Assert.*;
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertTrue;
 import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
 
-import java.lang.reflect.Array;
+//import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import java.util.*;
 
 public class GeometriesTests {
@@ -20,7 +17,7 @@ public class GeometriesTests {
      * Test method for {@link geometries.Geometries#findIntsersections(Ray)}
      */
     @Test
-    void testfindIntsersections(Ray ray) {
+   public void testfindIntsersections() {
 
         // ============ Equivalence Partitions Tests ==============
 
@@ -32,10 +29,9 @@ public class GeometriesTests {
 
         ArrayList<Point3D> points = new ArrayList<Point3D>();
         points.addAll(sphere.findIntsersections(test_ray));
-        points.addAll(plane.findIntsersections(test_ray));
         points.addAll(plane2.findIntsersections(test_ray));
 
-        Geometries geometries = null;
+        Geometries geometries = new Geometries();
         geometries.add(sphere);
         geometries.add(plane);
         geometries.add(plane2);
@@ -48,31 +44,26 @@ public class GeometriesTests {
         assertEquals("empty list of objects",new Geometries().findIntsersections(test_ray), null);
 
         // not empty list, but no intersections at hole
-        Ray test_ray2 = new Ray(new Point3D(0,1,0), new Vector(new Point3D(1,2,2)));
-        points.clear();
-        points.addAll(sphere.findIntsersections(test_ray2));
-        points.addAll(plane.findIntsersections(test_ray2));
-        points.addAll(plane2.findIntsersections(test_ray2));
+        Ray test_ray2 = new Ray(new Point3D(0,1,0), new Vector(1,2,2).normalized());
 
-        assertEquals("the Ray don't has intersections with the objects",geometries.findIntsersections(test_ray2),points);
+        assertEquals("the Ray don't has intersections with the objects",geometries.findIntsersections(test_ray2),null);
 
         // one Geometry object is intersect with the Ray
-        points.clear();
+        points = new ArrayList<Point3D>();
         points.addAll(sphere.findIntsersections(test_ray));
-        points.addAll(plane.findIntsersections(test_ray));
 
-        geometries = null;
+        geometries = new Geometries();
         geometries.add(sphere);
         geometries.add(plane);
 
         assertEquals("only one object is intersected with the Ray", geometries.findIntsersections(test_ray),points);
 
         // all object is intersected with the Ray
-        Ray test_ray3 = new Ray(new Point3D(0.8,0.8,0.8), new Vector(new Point3D(-0.5,-1,-1)));
+        Ray test_ray3 = new Ray(new Point3D(0.8,0.8,0.8), new Vector(-0.5,-1,-1).normalized());
 
         geometries.add(plane2);
 
-        points.clear();
+        points = new ArrayList<Point3D>();
         points.addAll(sphere.findIntsersections(test_ray3));
         points.addAll(plane.findIntsersections(test_ray3));
         points.addAll(plane2.findIntsersections(test_ray3));

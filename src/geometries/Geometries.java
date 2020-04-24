@@ -9,7 +9,7 @@ import java.util.*;
 public class Geometries implements Intersectable {
 
     /**  list to contain group of geometries objects */
-    private List<Intersectable> _geometriesList;
+    private ArrayList<Intersectable> _geometriesList;
 
     /************* constructors **************/
 
@@ -21,7 +21,7 @@ public class Geometries implements Intersectable {
     }
 
     public Geometries(Intersectable geometries) {
-        this._geometriesList = new ArrayList<Intersectable>();
+        this();
         this._geometriesList.add(geometries);
     }
 
@@ -42,10 +42,10 @@ public class Geometries implements Intersectable {
      * @return all the intersection in the objects group, when no intersections return null.
      */
     @Override
-    public List<Point3D> findIntsersections(Ray ray) {
-        List<Point3D> intersections = null;
+    public ArrayList<Point3D> findIntsersections(Ray ray) {
+        ArrayList<Point3D> intersections = null;
         for (Intersectable geometry : _geometriesList) {
-            List<Point3D> tempIntersections = geometry.findIntsersections(ray);
+            ArrayList<Point3D> tempIntersections = (ArrayList<Point3D>) geometry.findIntsersections(ray);
             if (tempIntersections != null) {
                 if (intersections == null)
                     intersections = new ArrayList<Point3D>();
