@@ -26,7 +26,7 @@ public final class Main {
      * @param args irrelevant here
      */
     public static void main(String[] args) {
-        out.println(new Vector(0, 1, 1).normalized().normalized());
+        out.println(new Vector(1, 1, 1).normalized().normalized());
 
         try { // test zero vector
             new Vector(0, 0, 0);

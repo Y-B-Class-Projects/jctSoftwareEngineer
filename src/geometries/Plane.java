@@ -4,7 +4,12 @@ import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static java.lang.System.out;
+import static primitives.Util.alignZero;
+import static primitives.Util.isZero;
 
 /**
  * Plane class represent a plane in the space by 3D-Point and normal Vector
@@ -81,6 +86,33 @@ public class Plane implements Geometry {
 
     @Override
     public List<Point3D> findIntsersections(Ray ray) {
-        return null;
+
+        //p = P0 + tv , t >= 0 | Ray points.
+        //t = [N*(Q0 - P0)]/[N*v] | N - plane normal, Q0 - plane point, P0 - ray point, v - ray direction.
+
+        double nv = _normal.dotProduct(ray.get_dir());
+
+        if(isZero(nv))
+            return null;
+
+        if (_p.equals(ray.get_p0())) // if the ray start on the plane and on P0 point;
+            return null;
+
+        double N_Q0_Minus_P0 = _normal.dotProduct(_p.subtruct(ray.get_p0()));
+
+        if (_p.equals(ray.get_p0())) // if the ray start on the plane;
+            return null;
+
+        double t  = alignZero(N_Q0_Minus_P0/nv);
+
+        if(t <= 0)
+            return null;
+
+        List<Point3D> result = new ArrayList<>();
+
+        result.add(new Point3D(ray.get_p0().add(ray.get_dir().scale(t))));
+
+
+        return result;
     }
 }

@@ -166,9 +166,10 @@ public class Vector {
      * @return Normalize of the object.
      */
     public Vector normalize() {
-        this._head = new Point3D(this.get_head().get_x().get_coord() / this.length(),
-                                 this.get_head().get_Y().get_coord() / this.length(),
-                                 this.get_head().get_z().get_coord() / this.length());
+        double length = length();
+        this._head = new Point3D(this.get_head().get_x().get_coord() / length,
+                                 this.get_head().get_Y().get_coord() / length,
+                                 this.get_head().get_z().get_coord() / length);
         return this;
     }
 
