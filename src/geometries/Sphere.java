@@ -69,8 +69,6 @@ public class Sphere extends RadialGeometry {
         Point3D P0 = ray.get_p0();
         Vector v = ray.get_dir();
 
-        //Vector P = P0.add(V.scale())
-
         Vector u = _center.subtruct(P0); //vector from P0 to O
         double tm = v.dotProduct(u); // length on vector v from P0 to O (proj-u on v).
         double d = Math.sqrt(u.lengthSquared() - tm * tm); // Distance between point O and continuation of vector v
@@ -78,7 +76,7 @@ public class Sphere extends RadialGeometry {
         if(d >= _radius) //if the continuation of vector v inside the Sphere
             return null;
         else {
-            double th = Math.sqrt(_radius * _radius - d * d); //
+            double th = Math.sqrt(_radius * _radius - d * d);
 
             List<Point3D> result = new ArrayList<>();
 
@@ -88,15 +86,12 @@ public class Sphere extends RadialGeometry {
             if(t1 < 0 && t2 < 0)
                 return  null;
 
-            if (t1 > 0) {
+            if (t1 > 0)
+                result.add(ray.getPoint(t1));
 
-                result.add(P0.add(v.scale(t1)));
-            }
-            if (t1 != t2) {
-                if (t2 > 0) {
-                    result.add(P0.add(v.scale(t2)));
-                }
-            }
+            if (t1 != t2 && t2 > 0)
+                result.add(ray.getPoint(t2));
+
             return result;
         }
     }

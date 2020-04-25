@@ -110,8 +110,7 @@ public class Plane implements Geometry {
 
         List<Point3D> result = new ArrayList<>();
 
-        result.add(new Point3D(ray.get_p0().add(ray.get_dir().scale(t))));
-
+        result.add(new Point3D(ray.getPoint(t)));
 
         return result;
     }
