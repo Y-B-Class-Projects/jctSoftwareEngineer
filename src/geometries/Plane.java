@@ -84,6 +84,11 @@ public class Plane implements Geometry {
                 '}';
     }
 
+    /**
+     * find intsersection of the plane and the ray
+     * @param ray for the intsersection
+     * @return the intsersection
+     */
     @Override
     public List<Point3D> findIntsersections(Ray ray) {
 

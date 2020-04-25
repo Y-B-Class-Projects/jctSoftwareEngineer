@@ -64,6 +64,12 @@ public class Sphere extends RadialGeometry {
         return super.toString();
     }
 
+
+    /**
+     * find intsersection of the sphere and the ray
+     * @param ray for the intsersection
+     * @return the intsersection
+     */
     @Override
     public List<Point3D> findIntsersections(Ray ray) {
         Point3D P0 = ray.get_p0();

@@ -34,6 +34,12 @@ public class Triangle extends Polygon{
         return super.toString();
     }
 
+
+    /**
+     * find intsersection of the triangle and the ray
+     * @param ray for the intsersection
+     * @return the intsersection
+     */
     @Override
     public List<Point3D> findIntsersections(Ray ray) {
 
