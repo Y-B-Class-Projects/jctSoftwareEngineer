@@ -12,6 +12,10 @@ import primitives.Vector;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Testing Integration
+ *
+ */
 public class IntegrationTests {
 
     /**
@@ -64,7 +68,7 @@ public class IntegrationTests {
         assertEquals("Bad number of rays", 9, sum);
 
         sum = 0;
-        sphere = new Sphere(new Point3D(0,0,-1) , 4);
+        sphere = new Sphere(new Point3D(0,0,-1) , 0.5);
         for (int i = 0; i<3 ; i++)
             for(int j = 0; j <3 ; j++) {
                 var intsersections = sphere.findIntsersections(camera.constructRayThroughPixel(3, 3, i, j, 1, 3, 3));
@@ -90,9 +94,9 @@ public class IntegrationTests {
                 if(intsersections != null)
                     sum += intsersections.size();
             }
-        assertEquals("Bad number of rays", 3, sum);
+        assertEquals("Bad number of rays", 9, sum);
 
-        plane = new Plane(new Point3D(0,0,2) , new Vector(0,1,1));
+        plane = new Plane(new Point3D(0,0,2) , new Vector(0,0.5,1));
 
         sum = 0;
         for (int i = 0; i<3 ; i++)
@@ -101,7 +105,7 @@ public class IntegrationTests {
                 if(intsersections != null)
                     sum += intsersections.size();
             }
-        assertEquals("Bad number of rays", 3, sum);
+        assertEquals("Bad number of rays", 9, sum);
 
 
         plane = new Plane(new Point3D(0,0,2) , new Vector(0,3,1));
@@ -113,7 +117,7 @@ public class IntegrationTests {
                 if(intsersections != null)
                     sum += intsersections.size();
             }
-        assertEquals("Bad number of rays", 2, sum);
+        assertEquals("Bad number of rays", 6, sum);
     }
 
     /**

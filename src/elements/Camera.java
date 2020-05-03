@@ -5,6 +5,8 @@ import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
 
+import static java.lang.System.out;
+
 /***
  * Camera: class to represent a camera on the graphical scene
  */
@@ -24,13 +26,13 @@ public class Camera {
      * @param v_up up vector from the eye of the camera
      * @param v_to forward vector from the eye of the camera
      */
-    public Camera(Point3D placeable, Vector v_up, Vector v_to){
+    public Camera(Point3D placeable,  Vector v_to , Vector v_up){
         if (v_to.dotProduct(v_up) != 0)
             throw new IllegalArgumentException("not normalized vectors");
         v_to.normalized();
         v_up.normalized();
         this.placeable = new Point3D(placeable);
-        this.v_up = new Vector(v_up);// אפשר להכניס אותם ידנית ובכך לחסוך העתקה (1,0,0) ו (0,1,0)
+        this.v_up = new Vector(v_up);
         this.v_to = new Vector(v_to);
         this.v_right = new Vector(v_to.crossProduct(v_up));
     }
@@ -85,6 +87,23 @@ public class Camera {
      */
     public Ray constructRayThroughPixel(int nX, int nY, int j, int i, double screenDistance, double screenWith, double screenHeight){
 
-        return null;
+        //image center
+        Point3D pCenter = placeable.add(v_to.scale(screenDistance));
+
+        //Ratio (pixel width & height)
+        double Ry = screenHeight/nY;
+        double Rx = screenWith/nX;
+
+        double xJ = (j - nX/2.0) * Rx + (Rx/2.0);
+        double yI = (i - nY/2.0) * Ry + Ry/2.0;
+
+        Point3D pIJ = pCenter;
+        if (xJ != 0) pIJ = pIJ.add(v_right.scale(xJ));
+        if (yI != 0) pIJ = pIJ.add(v_up.scale(-yI));
+
+        Vector vIJ = pIJ.subtruct(placeable).normalized();
+
+        return new Ray(placeable , vIJ);
+
     }
 }

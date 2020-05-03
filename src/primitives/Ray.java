@@ -73,6 +73,7 @@ public class Ray {
     public String toString() {
         return "(" +
                 "_p0=" + _p0 +
+                "_dir" + _dir +
                 ')';
     }
 

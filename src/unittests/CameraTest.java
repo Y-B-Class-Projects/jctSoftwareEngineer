@@ -1,5 +1,6 @@
 package unittests;
 
+import static java.lang.System.out;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
