@@ -22,7 +22,7 @@ public class Ray {
      */
     public Ray(Point3D _p0, Vector _dir) {
         if (_dir.length() != 1)
-            throw new IllegalArgumentException("the vector isn't normalized! ");
+            _dir.normalize();
         this._p0 = _p0;
         this._dir = _dir;
     }
