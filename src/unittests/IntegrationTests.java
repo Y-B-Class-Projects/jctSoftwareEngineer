@@ -1,5 +1,6 @@
 package unittests;
 
+import elements.Camera;
 import geometries.Geometries;
 import geometries.Plane;
 import geometries.Sphere;
