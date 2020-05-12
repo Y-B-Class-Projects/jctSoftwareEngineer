@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.imageio.*;
 import javax.imageio.stream.*;
 
+
 /**
  * Image writer class combines accumulation of pixel color matrix and
  * finally producing a non-optimized jpeg image from this matrix.
