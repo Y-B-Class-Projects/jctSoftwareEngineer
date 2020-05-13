@@ -23,9 +23,9 @@ public class Render {
 
     /*********     constructor   ***********/
     /***
-     *
-     * @param imageWriter
-     * @param scene
+     * constructor to initialized class Render
+     * @param imageWriter use imageWriter class to write the picture
+     * @param scene take from the scene all the details
      */
 
     public Render(ImageWriter imageWriter, Scene scene){
@@ -116,7 +116,7 @@ public class Render {
    }
 
     /***
-     *
+     * write the details of the scene, by calling the function from Image Writer class
      */
    public void writeToImage(){
        imageWriter.writeToImage();

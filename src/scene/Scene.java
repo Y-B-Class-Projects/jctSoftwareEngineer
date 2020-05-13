@@ -19,7 +19,7 @@ public class Scene {
     /***
      * name - scene name
      * background -  the background color
-     * ambientlight - the color on the specific object
+     * ambient light - the color on the specific object
      * geometries - the geometries objects represent on the scene
      * camera - details about the camera
      * distance - the distance from the camera to the objects
