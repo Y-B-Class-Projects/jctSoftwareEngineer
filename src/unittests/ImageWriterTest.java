@@ -12,7 +12,7 @@ public class ImageWriterTest {
 
     /**
      * Test method for ImageWriter
-     * {@link renderer.ImageWriter()}
+     * {@link ImageWriter#ImageWriter(String, double, double, int, int)}
      */
     @Test
     public void testWriteToImage() {
