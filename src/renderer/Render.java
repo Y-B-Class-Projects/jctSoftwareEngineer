@@ -21,6 +21,18 @@ public class Render {
    private Scene scene;
    private ImageWriter imageWriter;
 
+    /*********     constructor   ***********/
+    /***
+     *
+     * @param imageWriter
+     * @param scene
+     */
+
+    public Render(ImageWriter imageWriter, Scene scene){
+        this.imageWriter = imageWriter;
+        this.scene = scene;
+    }
+
    /********    functions    **********/
     /***
      * this function responsible for fill up the pixels matrix from the scene,
@@ -59,7 +71,7 @@ public class Render {
      * @param p point, for calculating the color
      */
    public Color calcColor(Point3D p){
-        return scene.get_ambientlight().getIntensity();
+        return scene.get_ambientlight().GetIntensity();
    }
 
     /***
@@ -97,9 +109,16 @@ public class Render {
        for (int row = 0; row < Ny; ++row) {
            for (int column = 0; column < Nx; ++column) {
                if (row % interval == 0 || column % interval == 0) {
-                   imageWriter.writePixel(column, row, lineColor);
+                   imageWriter.writePixel(column, row, color);
                }
            }
        }
+   }
+
+    /***
+     *
+     */
+   public void writeToImage(){
+       imageWriter.writeToImage();
    }
 }

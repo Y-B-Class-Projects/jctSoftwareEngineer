@@ -31,8 +31,8 @@ public class Geometries implements Intersectable {
      * function add to add single geometries object to the group.
      * @param geometries tho pointer to the list
      */
-    public void add(Intersectable geometries) {
-        this._geometriesList.add(geometries);
+    public void add(Intersectable... geometries) {
+        this._geometriesList.addAll(Arrays.asList(geometries));
     }
 
     /***

@@ -57,14 +57,14 @@ public class Scene {
      * @return background color
      */
     public Color get_background() {
-        return _background;
+        return new Color(_background);
     }
     /***
      * ambient light Getter
      * @return ambient light
      */
     public AmbientLight get_ambientlight() {
-        return _ambientlight;
+        return new AmbientLight(_ambientlight.GetIntensity(),1.0);
     }
     /***
      * geometries Getter
@@ -78,7 +78,7 @@ public class Scene {
      * @return the camera components
      */
     public Camera get_camera() {
-        return _camera;
+        return new Camera(_camera.getPlaceable(),_camera.getV_to(),_camera.getV_up());
     }
     /***
      * distance Getter
@@ -94,21 +94,21 @@ public class Scene {
      * @param color the color of the background
      */
     public void setBackground(Color color){
-        this._background = color;
+        this._background = new Color(color);
     }
     /***
      * function to update the ambient light of the object
      * @param color ambient light color
      */
     public void setAmbientLight(AmbientLight color){
-        this._ambientlight = color;
+        this._ambientlight = new AmbientLight(color.GetIntensity(), 1.0);
     }
     /***
      * function to update the camera details
      * @param param camera details
      */
     public void setCamera(Camera param){
-        this._camera = param;
+        this._camera = new Camera(param.getPlaceable(), param.getV_to(), param.getV_up());
     }
     /***
      * function to update the distance from view plane to camera
@@ -123,8 +123,9 @@ public class Scene {
      * receive list of Point3D and add them to the geometries list.
      * @param geometries Geometries objects
      */
-    public void addGeometries(Intersectable geometries){
+    public void addGeometries(Intersectable... geometries){
         this._geometries.add(geometries);
+
     }
 
     //public void addGeometries(Triangle triangle, Triangle triangle1, Triangle triangle2, Triangle triangle3) { }
