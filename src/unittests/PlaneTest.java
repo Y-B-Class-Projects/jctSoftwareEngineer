@@ -8,6 +8,7 @@ import primitives.Ray;
 import primitives.Vector;
 import static org.junit.Assert.*;
 import java.util.List;
+import geometries.Intersectable.GeoPoint;
 
 import static org.junit.Assert.assertEquals;
 
@@ -40,9 +41,9 @@ class PlaneTest {
         //****Group: The Ray neither orthogonal or parallel to the plane
         // TC01: Ray intersects the plane (1 point).
 
-        Point3D p1 = new Point3D(2,0,0);
+        GeoPoint p1 = new GeoPoint(plane, new Point3D(2,0,0));
 
-        List<Point3D> result = plane.findIntsersections(new Ray(new Point3D(1, 0, 1), new Vector(0.7071067811865476, 0, -0.7071067811865476)));
+        List<GeoPoint> result = plane.findIntsersections(new Ray(new Point3D(1, 0, 1), new Vector(0.7071067811865476, 0, -0.7071067811865476)));
 
 
 
@@ -73,7 +74,7 @@ class PlaneTest {
         //****Group: Ray is orthogonal to the plane
         // TC12: P0 before the plane (1 point).
 
-        p1 = new Point3D(2,2,0);
+        p1.point = new Point3D(2,2,0);
 
         result = plane.findIntsersections(new Ray(new Point3D(2, 2, -1), new Vector(0, 0, 1)));
 

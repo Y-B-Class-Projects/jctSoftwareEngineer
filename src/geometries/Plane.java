@@ -1,5 +1,6 @@
 package geometries;
 
+import primitives.Color;
 import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
@@ -14,7 +15,7 @@ import static primitives.Util.isZero;
 /**
  * Plane class represent a plane in the space by 3D-Point and normal Vector
  */
-public class Plane implements Geometry {
+public class Plane extends Geometry {
 
     /** point*/
     Point3D _p;
@@ -44,6 +45,29 @@ public class Plane implements Geometry {
     {
         _p = new Point3D(point3D);
         this._normal = new Vector(_normal);
+    }
+
+    /**
+     * Constructs and initialized a Plane by 3 points and color
+     * @param color plane color
+     * @param p1 point
+     * @param p2 point for normal
+     * @param p3 point for normal
+     */
+    public Plane(Color color, Point3D p1 , Point3D p2 , Point3D p3){
+        this(p1 , p2 ,p3);
+        this._emission = color;
+    }
+
+    /**
+     * Constructs and initialized a Plane by point, normal vector and color.
+     * @param color plane color
+     * @param point3D point
+     * @param _normal normal
+     */
+    public Plane(Color color, Point3D point3D , Vector _normal){
+        this(point3D , _normal);
+        this._emission = color;
     }
 
     /**
@@ -81,6 +105,7 @@ public class Plane implements Geometry {
         return "Plane{" +
                 "_p=" + _p +
                 ", _normal=" + _normal +
+                ", color=" + _emission +
                 '}';
     }
 
@@ -90,7 +115,7 @@ public class Plane implements Geometry {
      * @return the intsersection
      */
     @Override
-    public List<Point3D> findIntsersections(Ray ray) {
+    public List<GeoPoint> findIntsersections(Ray ray) {
 
         //p = P0 + tv , t >= 0 | Ray points.
         //t = [N*(Q0 - P0)]/[N*v] | N - plane normal, Q0 - plane point, P0 - ray point, v - ray direction.
@@ -113,9 +138,9 @@ public class Plane implements Geometry {
         if(t <= 0)
             return null;
 
-        List<Point3D> result = new ArrayList<>();
+        List<GeoPoint> result = new ArrayList<>();
 
-        result.add(new Point3D(ray.getPoint(t)));
+        result.add(new GeoPoint(this,ray.getPoint(t)));
 
         return result;
     }

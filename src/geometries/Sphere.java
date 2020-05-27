@@ -1,5 +1,6 @@
 package geometries;
 
+import primitives.Color;
 import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
@@ -25,6 +26,17 @@ public class Sphere extends RadialGeometry {
     public Sphere(Point3D _center, double _radius) {
         super(_radius);
         this._center = _center;
+    }
+
+    /**
+     * Constructs and initialized a Sphere by color, center point and radius
+     * @param color
+     * @param _center
+     * @param _radius
+     */
+    public Sphere(Color color,Point3D _center, double _radius){
+        this(_center,_radius);
+        _emission = color;
     }
 
     /**
@@ -71,7 +83,7 @@ public class Sphere extends RadialGeometry {
      * @return the intsersection
      */
     @Override
-    public List<Point3D> findIntsersections(Ray ray) {
+    public List<GeoPoint> findIntsersections(Ray ray) {
         Point3D P0 = ray.get_p0();
         Vector v = ray.get_dir();
 
@@ -84,7 +96,7 @@ public class Sphere extends RadialGeometry {
         else {
             double th = Math.sqrt(_radius * _radius - d * d);
 
-            List<Point3D> result = new ArrayList<>();
+            List<GeoPoint> result = new ArrayList<>();
 
             double t1 = alignZero(tm + th);
             double t2 = alignZero(tm - th);
@@ -93,10 +105,10 @@ public class Sphere extends RadialGeometry {
                 return  null;
 
             if (t1 > 0)
-                result.add(ray.getPoint(t1));
+                result.add(new GeoPoint(this , ray.getPoint(t1)));
 
             if (t1 != t2 && t2 > 0)
-                result.add(ray.getPoint(t2));
+                result.add(new GeoPoint(this , ray.getPoint(t2)));
 
             return result;
         }

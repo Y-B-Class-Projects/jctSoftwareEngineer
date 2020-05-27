@@ -1,14 +1,17 @@
 package unittests;
 
+import geometries.Intersectable;
 import geometries.Sphere;
 import geometries.Triangle;
 import org.junit.jupiter.api.Test;
 import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
+import geometries.Intersectable.GeoPoint;
 
 import java.util.List;
 
+import static java.lang.System.out;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -39,11 +42,13 @@ class TriangleTest {
 
         // TC01: ray goes inside triangle (1 points)
 
-        Point3D p1 = new Point3D(1.5, 0, 0);
-        List<Point3D> result = triangle.findIntsersections(new Ray(new Point3D(1.5,0,-1), new Vector(0.0, 0.0, 1)));
+        GeoPoint p1 =new GeoPoint(triangle, new Point3D(1.5, 0, 0));
+        List<GeoPoint> result = triangle.findIntsersections(new Ray(new Point3D(1.5,0,-1), new Vector(0.0, 0.0, 1)));
 
         assertEquals("TC01: Wrong number of points", 1, result.size());
         assertEquals("TC01: Ray goes inside triangle", List.of(p1), result);
+
+
 
         // TC02: ray goes outside against edge (0 points)
 
@@ -57,14 +62,14 @@ class TriangleTest {
 
         // TC10: Ray goes through the edge of triangle (0 points)
 
-        p1 = new Point3D(1, 0, 0);
+        p1.point = new Point3D(1, 0, 0);
         result = triangle.findIntsersections(new Ray(new Point3D(1,0,-1), new Vector(0.0, 0.0, 1)));
 
         assertEquals("TC10: Wrong number of points", null, result);
 
         // TC11: Ray goes through the vertex of triangle (0 points)
 
-        p1 = new Point3D(2, 0, 0);
+        p1.point = new Point3D(2, 0, 0);
         result = triangle.findIntsersections(new Ray(new Point3D(2,0,-1), new Vector(0.0, 0.0, 1)));
 
         assertEquals("TC11: Wrong number of points", null, result);
@@ -83,14 +88,14 @@ class TriangleTest {
 
         // TC14: Ray start at the vertex of triangle (0 points)
 
-        p1 = new Point3D(2, 0, 0);
+        p1.point = new Point3D(2, 0, 0);
         result = triangle.findIntsersections(new Ray(new Point3D(1,1,0), new Vector(0.0, 0.0, 1)));
 
         assertEquals("TC14: Wrong number of points", null, result);
 
         // TC15: Ray start at the edge continuation of triangle (0 points)
 
-        p1 = new Point3D(1, 2, 0);
+        p1.point = new Point3D(1, 2, 0);
         result = triangle.findIntsersections(new Ray(new Point3D(1,10,0), new Vector(0.0, 0.0, 1)));
 
         assertEquals("TC15: Wrong number of points", null, result);

@@ -1,3 +1,4 @@
+
 package unittests;
 
 import org.junit.Test;
@@ -10,7 +11,7 @@ import scene.Scene;
 
 /**
  * Test rendering abasic image
- * 
+ *
  * @author Dan
  */
 public class LightsTests {
@@ -166,5 +167,6 @@ public class LightsTests {
         render.renderImage();
         render.writeToImage();
     }
-    
+
 }
+

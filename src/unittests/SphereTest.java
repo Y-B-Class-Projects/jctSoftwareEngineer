@@ -4,6 +4,7 @@ import geometries.Plane;
 import geometries.Sphere;
 import org.junit.jupiter.api.Test;
 import primitives.*;
+import geometries.Intersectable.GeoPoint;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,17 +43,17 @@ class SphereTest {
                 sphere.findIntsersections(new Ray(new Point3D(-1, 0, 0), new Vector(0.7071067811865476, 0.7071067811865476, 0.0))));
 
         // TC02: Ray starts before and crosses the sphere (2 points)
-        Point3D p1 = new Point3D(0.0651530771650466, 0.355051025721682, 0);
-        Point3D p2 = new Point3D(1.53484692283495, 0.844948974278318, 0);
-        List<Point3D> result =  sphere.findIntsersections(new Ray(new Point3D(-1, 0, 0), new Vector(0.9486832980505139, 0.316227766016838, 0)));
+        GeoPoint p1 = new GeoPoint(sphere, new Point3D(0.0651530771650466, 0.355051025721682, 0));
+        GeoPoint p2 =new GeoPoint(sphere, new Point3D(1.53484692283495, 0.844948974278318, 0));
+        List<GeoPoint> result =  sphere.findIntsersections(new Ray(new Point3D(-1, 0, 0), new Vector(0.9486832980505139, 0.316227766016838, 0)));
         assertEquals("TC02: Wrong number of points", 2, result.size());
-        if (result.get(0).get_x().get_coord() > result.get(1).get_x().get_coord())
+        if (result.get(0).point.get_x().get_coord() > result.get(1).point.get_x().get_coord())
             result = List.of(result.get(1), result.get(0));
         assertEquals("TC02: Ray crosses sphere", List.of(p1, p2), result);
 
         // TC03: Ray starts inside the sphere (1 point)
 
-        p1 = new Point3D(0.5, 0, 0.8660254037844386);
+        p1.point = new Point3D(0.5, 0, 0.8660254037844386);
 
         result = sphere.findIntsersections(new Ray(new Point3D(0.5, 0, 0), new Vector(0, 0, 1)));
 
@@ -71,7 +72,7 @@ class SphereTest {
         // **** Group: Ray's line crosses the sphere (but not the center)
         // TC11: Ray starts at sphere and goes inside (1 points)
 
-        p1 = new Point3D(1, 0, 1);
+        p1.point = new Point3D(1, 0, 1);
         result = sphere.findIntsersections(new Ray(new Point3D(1, -1, 0), new Vector(0.0, 0.7071067811865476, 0.7071067811865476)));
 
         assertEquals("TC11: Wrong number of points", 1, result.size());
@@ -85,19 +86,19 @@ class SphereTest {
         // **** Group: Ray's line goes through the center
         // TC13: Ray starts before the sphere (2 points)
 
-        p1 = new Point3D(1, 1, 0);
-        p2 = new Point3D(1, -1, 0);
+        p1.point = new Point3D(1, 1, 0);
+        p2.point = new Point3D(1, -1, 0);
 
         result = sphere.findIntsersections(new Ray(new Point3D(1, -2, 0), new Vector(0, 1, 0)));
         assertEquals("TC13: Wrong number of points", 2, result.size());
 
-        if (result.get(0).get_x().get_coord() > result.get(1).get_x().get_coord())
+        if (result.get(0).point.get_x().get_coord() > result.get(1).point.get_x().get_coord())
             result = List.of(result.get(1), result.get(0));
         assertEquals("TC13: Ray crosses sphere and goes through the center", List.of(p1, p2), result);
 
         // TC14: Ray starts at sphere and goes inside (1 points)
 
-        p1 = new Point3D(1, 1, 0);
+        p1.point = new Point3D(1, 1, 0);
 
         result = sphere.findIntsersections(new Ray(new Point3D(1, -1, 0), new Vector(0, 1, 0)));
 
@@ -106,7 +107,7 @@ class SphereTest {
 
         // TC15: Ray starts inside (1 points)
 
-        p1 = new Point3D(2, 0, 0);
+        p1.point = new Point3D(2, 0, 0);
 
         result = sphere.findIntsersections(new Ray(new Point3D(0.5, 0, 0), new Vector(1, 0, 0)));
 
@@ -115,7 +116,7 @@ class SphereTest {
 
         // TC16: Ray starts at the center (1 points)
 
-        p1 = new Point3D(2, 0, 0);
+        p1.point = new Point3D(2, 0, 0);
 
         result = sphere.findIntsersections(new Ray(new Point3D(0.5, 0, 0), new Vector(1, 0, 0)));
 

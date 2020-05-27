@@ -1,18 +1,19 @@
 package geometries;
 
+import primitives.Color;
 import primitives.Point3D;
 import primitives.Vector;
 
 /**
  * RadialGeometry class is an abstract class for all geometric shapes in space that have a radius
  */
-public abstract class RadialGeometry implements Geometry
+public abstract class RadialGeometry extends Geometry
 {
     /** radius of the object */
     protected double _radius;
 
     /**
-     * Constructs and initialized a RadialGeometry object
+     * Constructs and initialized a RadialGeometry object by radius.
      * @param _radius the radius of the RadialGeometry object
      */
     public RadialGeometry(double _radius)
@@ -26,7 +27,17 @@ public abstract class RadialGeometry implements Geometry
      */
     public RadialGeometry(RadialGeometry radialGeometry)
     {
-        _radius = radialGeometry.get_radius();
+        _radius = radialGeometry.get_radius(); _emission = radialGeometry._emission;
+    }
+
+    /**
+     * Constructs and initialized a RadialGeometry object by radius and color
+     * @param color the color
+     * @param _radius the radius of the RadialGeometry object
+     */
+    public RadialGeometry(Color color, double _radius){
+        this(_radius);
+        _emission = color;
     }
 
     /**
@@ -45,6 +56,7 @@ public abstract class RadialGeometry implements Geometry
     public String toString() {
         return "RadialGeometry{" +
                 "_radius=" + _radius +
+                ", color=" + _emission +
                 '}';
     }
 }

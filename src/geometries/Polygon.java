@@ -10,7 +10,7 @@ import static primitives.Util.*;
  *
  * @author Dan
  */
-public class Polygon implements Geometry {
+public class Polygon extends Geometry {
     /**
      * List of polygon's vertices
      */
@@ -74,13 +74,23 @@ public class Polygon implements Geometry {
         }
     }
 
+    /**
+     * Constructs and initialized a polygon by color and list of Point3D
+     * @param color
+     * @param vertices
+     */
+    public Polygon(Color color,Point3D... vertices){
+        this(vertices);
+        this._emission = color;
+    }
+
     @Override
     public Vector getNormal(Point3D point) {
         return _plane.getNormal(point);
     }
 
     @Override
-    public List<Point3D> findIntsersections(Ray ray) {
+    public List<GeoPoint> findIntsersections(Ray ray) {
         return null;
     }
 }

@@ -42,13 +42,13 @@ public class Geometries implements Intersectable {
      * @return all the intersection in the objects group, when no intersections return null.
      */
     @Override
-    public ArrayList<Point3D> findIntsersections(Ray ray) {
-        ArrayList<Point3D> intersections = null;
+    public ArrayList<GeoPoint> findIntsersections(Ray ray) {
+        ArrayList<GeoPoint> intersections = null;
         for (Intersectable geometry : _geometriesList) {
-            ArrayList<Point3D> tempIntersections = (ArrayList<Point3D>) geometry.findIntsersections(ray);
+            ArrayList<GeoPoint> tempIntersections = (ArrayList<GeoPoint>) geometry.findIntsersections(ray);
             if (tempIntersections != null) {
                 if (intersections == null)
-                    intersections = new ArrayList<Point3D>();
+                    intersections = new ArrayList<GeoPoint>();
                 intersections.addAll(tempIntersections);
             }
         }

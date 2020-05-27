@@ -1,6 +1,7 @@
 package geometries;
 
 
+import primitives.Color;
 import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
@@ -17,12 +18,22 @@ import static java.lang.System.out;
 public class Triangle extends Polygon{
 
     /**
-     * Constructs and initialized a Triangle
+     * Constructs and initialized a Triangle by 3 points
      * @param points 3 Point3D objects
      */
     public Triangle(Point3D... points)
     {
         super(points);
+    }
+
+    /**
+     * Constructs and initialized a Triangle by color and 3 points
+     * @param color
+     * @param points
+     */
+    public Triangle(Color color,Point3D... points){
+        this(points);
+        _emission = color;
     }
 
     /**
@@ -41,14 +52,14 @@ public class Triangle extends Polygon{
      * @return the intsersection
      */
     @Override
-    public List<Point3D> findIntsersections(Ray ray) {
+    public List<GeoPoint> findIntsersections(Ray ray) {
 
         Plane plane = new Plane(_vertices.get(0), _vertices.get(1), _vertices.get(2));
 
         if(plane.findIntsersections(ray) == null)
             return null;
 
-        Point3D p = plane.findIntsersections(ray).get(0); //if there is a intsersection between the ray and the plane, this is the only result
+        GeoPoint p = new GeoPoint(this, plane.findIntsersections(ray).get(0).point); //if there is a intsersection between the ray and the plane, this is the only result
 
         Point3D P0 = ray.get_p0();
 
@@ -65,7 +76,7 @@ public class Triangle extends Polygon{
         if(v.dotProduct(N1) > 0 && v.dotProduct(N2) > 0 && v.dotProduct(N3) > 0
             ||v.dotProduct(N1) < 0 && v.dotProduct(N2) < 0 && v.dotProduct(N3) < 0){
 
-            List<Point3D> result = new ArrayList<>();
+            List<GeoPoint> result = new ArrayList<>();
             result.add(p);
             return result;
         }
