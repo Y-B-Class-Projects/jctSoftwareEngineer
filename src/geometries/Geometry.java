@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Interface for all Geometry Objects.
  */
-abstract class Geometry implements Intersectable {
+public abstract class Geometry implements Intersectable {
     protected Color _emission;
     protected Material _material;
 
@@ -51,7 +51,7 @@ abstract class Geometry implements Intersectable {
      * @return object color
      */
     public Color get_emission() {
-        return _emission;
+        return new Color(_emission);
     }
 
     /***
@@ -64,6 +64,5 @@ abstract class Geometry implements Intersectable {
 
     @Override
     public abstract List<GeoPoint> findIntsersections(Ray ray);
-
 
 }

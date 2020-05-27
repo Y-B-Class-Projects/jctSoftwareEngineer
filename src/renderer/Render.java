@@ -8,6 +8,7 @@ import scene.Scene;
 import elements.Camera;
 import java.util.List;
 import geometries.Intersectable.GeoPoint;
+import static geometries.Intersectable.GeoPoint;
 
 /***
  * class Render, responsible to take all the calculation of ray intersections
