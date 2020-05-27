@@ -2,6 +2,7 @@ package scene;
 
 import elements.AmbientLight;
 import elements.Camera;
+import elements.LightSource;
 import geometries.Geometries;
 import geometries.Intersectable;
 import geometries.Triangle;
@@ -9,6 +10,8 @@ import primitives.Color;
 import primitives.Point3D;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /***
  * Scene class store all the scene components, including
@@ -30,8 +33,8 @@ public class Scene {
     private Geometries _geometries;
     private Camera _camera;
     private double _distance;
-
-    /*********   constructor   **********/
+    private List<LightSource> _lights;
+/*********   constructor   **********/
 
     /***
      * constructor for initialization
@@ -41,9 +44,10 @@ public class Scene {
     public Scene(String _name) {
         this._name = _name;
         this._geometries = new Geometries();
+        this._lights = new LinkedList<LightSource>();
     }
 
-    /*********   Getter's    ********/
+/*********   Getter's    ********/
 
     /***
      *  name Getter
@@ -64,7 +68,7 @@ public class Scene {
      * @return ambient light
      */
     public AmbientLight get_ambientlight() {
-        return new AmbientLight(_ambientlight.GetIntensity(),1.0);
+        return new AmbientLight(_ambientlight.get_intensity(),1.0);
     }
     /***
      * geometries Getter
@@ -88,7 +92,16 @@ public class Scene {
         return _distance;
     }
 
-    /*********  functions  ***********/
+    /***
+     * list of light sources getter
+     * @return list of light sources
+     */
+    public List<LightSource> get_lights() {
+        return _lights;
+    }
+
+/*********  functions  ***********/
+
     /***
      * function to update the background color
      * @param color the color of the background
@@ -101,7 +114,7 @@ public class Scene {
      * @param color ambient light color
      */
     public void setAmbientLight(AmbientLight color){
-        this._ambientlight = new AmbientLight(color.GetIntensity(), 1.0);
+        this._ambientlight = new AmbientLight(color.get_intensity(), 1.0);
     }
     /***
      * function to update the camera details
@@ -126,6 +139,17 @@ public class Scene {
     public void addGeometries(Intersectable... geometries){
         this._geometries.add(geometries);
 
+    }
+
+    /***
+     * function to add light to the list of lights
+     * @param lights a single element to add to the list
+     */
+    public void addLights(LightSource lights){
+        if (_lights == null) {
+            _lights = new LinkedList<>();
+        }
+        _lights.add(lights);
     }
 
     //public void addGeometries(Triangle triangle, Triangle triangle1, Triangle triangle2, Triangle triangle3) { }
