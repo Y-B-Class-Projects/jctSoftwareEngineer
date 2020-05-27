@@ -69,10 +69,13 @@ public class Render {
 
     /***
      * function to calculate the color for the closes point to the ray
-     * @param p point, for calculating the color
+     * @param intersection point, for calculating the color
      */
-   public Color calcColor(GeoPoint p){
-        return scene.get_ambientlight().GetIntensity();
+   private Color calcColor(GeoPoint intersection){
+       Color color = scene.get_ambientlight().get_intensity();
+
+       color = color.add(intersection.geometry.get_emission());
+       return color;
    }
 
     /***
