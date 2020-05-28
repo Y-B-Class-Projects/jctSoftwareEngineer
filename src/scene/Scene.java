@@ -10,8 +10,12 @@ import primitives.Color;
 import primitives.Point3D;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+
+import static java.lang.System.out;
+import static java.util.Arrays.asList;
 
 /***
  * Scene class store all the scene components, including
@@ -145,12 +149,7 @@ public class Scene {
      * function to add light to the list of lights
      * @param lights a single element to add to the list
      */
-    public void addLights(LightSource lights){
-        if (_lights == null) {
-            _lights = new LinkedList<>();
-        }
-        _lights.add(lights);
+    public void addLights(LightSource... lights){
+        _lights.addAll(asList(lights));
     }
-
-    //public void addGeometries(Triangle triangle, Triangle triangle1, Triangle triangle2, Triangle triangle3) { }
 }

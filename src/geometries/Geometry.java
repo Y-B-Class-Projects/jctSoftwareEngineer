@@ -17,16 +17,14 @@ public abstract class Geometry implements Intersectable {
      * Geometry constructor with specific color
      */
     public Geometry(Color _emission) {
-        this._emission = _emission;
-        this._material = new Material(0, 0, 0);
+        this(_emission,new Material(0, 0, 0));
     }
 
     /**
      * Geometry constructor with color black
      */
     public Geometry() {
-        this._emission = Color.BLACK;
-        this._material = new Material(0, 0, 0);
+        this(Color.BLACK,new Material(0, 0, 0));
     }
 
     /***

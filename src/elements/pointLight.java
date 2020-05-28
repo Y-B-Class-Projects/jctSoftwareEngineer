@@ -4,6 +4,8 @@ import primitives.Color;
 import primitives.Point3D;
 import primitives.Vector;
 
+import static java.lang.System.out;
+
 /***
  * class to represent omni-directional point source,
  * meaning that the rays of the light spread to all the
@@ -34,11 +36,11 @@ public class pointLight extends Light implements LightSource {
     @Override
     public Color getIntensity(Point3D p) {
         double d = p.distance(_position);
-        return _intensity.reduce((_kC + _kl*d + _kQ * d * d));
+        return _intensity.reduce(_kC + _kl*d + _kQ * d * d);
     }
 
     @Override
     public Vector getL(Point3D p) {
-        return p.subtruct(_position).normalized();
+        return (p.subtruct(_position)).normalized();
     }
 }

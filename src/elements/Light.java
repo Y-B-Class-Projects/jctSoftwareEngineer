@@ -8,7 +8,7 @@ import primitives.Color;
  * to the objects(התפשטות קרני האור)
  */
 
-public abstract class Light {
+abstract class Light {
 
     protected Color _intensity;
 
