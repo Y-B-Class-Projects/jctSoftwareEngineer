@@ -2,6 +2,8 @@ package elements;
 
 import primitives.Color;
 
+import static java.lang.System.out;
+
 /***
  * abstract class to represent light source model!
  * meaning it represent the rays that spreading from the source light
