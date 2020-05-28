@@ -18,18 +18,18 @@ public class DirectionalLight extends Light implements LightSource{
      * constructor to initialize the direction vector
      * @param _direction receive vector
      */
-    public DirectionalLight(Vector _direction, Color color) {
+    public DirectionalLight(Color color , Vector _direction) {
         super(color);
         this._direction = _direction;
     }
 /*********     functions     ***********/
     @Override
     public Color getIntensity(Point3D p) {
-        return null;
+        return _intensity;
     }
 
     @Override
     public Vector getL(Point3D p) {
-        return null;
+        return _direction;
     }
 }

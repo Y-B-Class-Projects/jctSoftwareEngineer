@@ -1,14 +1,15 @@
 package renderer;
 
+import elements.LightSource;
 import geometries.Intersectable;
-import primitives.Color;
-import primitives.Point3D;
-import primitives.Ray;
+import primitives.*;
 import scene.Scene;
 import elements.Camera;
 import java.util.List;
 import geometries.Intersectable.GeoPoint;
 import static geometries.Intersectable.GeoPoint;
+import static java.lang.Math.*;
+import static primitives.Util.alignZero;
 
 /***
  * class Render, responsible to take all the calculation of ray intersections
@@ -76,8 +77,37 @@ public class Render {
        Color color = scene.get_ambientlight().get_intensity();
 
        color = color.add(intersection.geometry.get_emission());
+
+       Vector v = intersection.point.subtruct(scene.get_camera().getPlaceable()).normalize();
+       Vector n = intersection.geometry.getNormal(intersection.point);
+       Material material =intersection.geometry.get_material();
+       int nShininess = material.getnShininess();
+       double kd = material.getkD();
+       double ks = material.getkS();
+       for (LightSource lightSource : scene.get_lights()) {
+           Vector l = lightSource.getL(intersection.point);
+           if (signum(n.dotProduct(l)) == signum(n.dotProduct(v))) {
+               Color lightIntensity = lightSource.getIntensity(intersection.point);
+               color = color.add(calcDiffusive(kd, l, n, lightIntensity),
+                       calcSpecular(ks, l, n, v, nShininess, lightIntensity));
+           }
+       }
        return color;
    }
+
+    private Color calcDiffusive(double kd, Vector l, Vector n, Color lightIntensity) {
+        return lightIntensity.scale(kd * abs(l.dotProduct(n)));
+    }
+
+    private Color calcSpecular(double ks, Vector l, Vector n, Vector v, int nShininess, Color lightIntensity) {
+       Vector r = l.subtruct(n.scale(2*l.dotProduct(n))).normalized();  // r = l - 2*(l-n)*n
+       double vr = alignZero(-v.dotProduct(r));
+
+        if(vr >= 0)
+            return Color.BLACK;
+        return lightIntensity.scale(ks * pow(vr , nShininess));
+    }
+
 
     /***
      * function receive some points, and return the point with the minimal distance

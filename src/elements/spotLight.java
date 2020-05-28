@@ -3,6 +3,7 @@ package elements;
 import primitives.Color;
 import primitives.Point3D;
 import primitives.Vector;
+import static primitives.Util.alignZero;
 
 /***
  * class that extends from point light, it represent
@@ -23,8 +24,19 @@ public class spotLight extends pointLight {
      * @param _direction the direction of the point light
      * @param color the color of the light
      */
-    public spotLight(Point3D _position, double _kC, double _kl, double _kQ, Vector _direction, Color color) {
-        super(_position, _kC, _kl, _kQ, color);
+    public spotLight( Color color, Point3D _position,Vector _direction, double _kC, double _kl, double _kQ) {
+        super(color,_position, _kC, _kl, _kQ);
         this._direction = _direction;
+    }
+
+    @Override
+    public Color getIntensity(Point3D p) {
+        Vector l = getL(p);
+        double dl = alignZero(_direction.dotProduct(l)); // = cos(a) , a is the angle between _dir and l
+
+        if(dl <= 0){
+            return Color.BLACK;
+        }
+        return super.getIntensity(p).scale(dl);
     }
 }
