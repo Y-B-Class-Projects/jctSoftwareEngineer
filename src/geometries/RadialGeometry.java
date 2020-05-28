@@ -17,18 +17,9 @@ public abstract class RadialGeometry extends Geometry
      * Constructs and initialized a RadialGeometry object by radius.
      * @param _radius the radius of the RadialGeometry object
      */
-    public RadialGeometry(double _radius)
-    {
-        this._radius = _radius;
-    }
+    public RadialGeometry(double _radius) {
 
-    /**
-     * Copy constructor
-     * @param radialGeometry radialGeometry to copy to the object.
-     */
-    public RadialGeometry(RadialGeometry radialGeometry)
-    {
-        _radius = radialGeometry.get_radius(); _emission = radialGeometry._emission;
+        this._radius = _radius;
     }
 
     /**
@@ -39,6 +30,29 @@ public abstract class RadialGeometry extends Geometry
     public RadialGeometry(Color color, double _radius){
         this(_radius);
         _emission = color;
+    }
+
+    /**
+     * Constructs and initialized a RadialGeometry object by radius, color and material
+     * @param color the color
+     * @param _radius the radius of the RadialGeometry object
+     * @param material the material
+     */
+    public RadialGeometry(Color color,Material material, double _radius){
+        this(_radius);
+        _emission = color;
+        _material = material;
+    }
+
+    /**
+     * Copy constructor
+     * @param radialGeometry radialGeometry to copy to the object.
+     */
+    public RadialGeometry(RadialGeometry radialGeometry)
+    {
+        _radius = radialGeometry.get_radius();
+        _emission = radialGeometry._emission;
+        _material = radialGeometry._material;
     }
 
     /**

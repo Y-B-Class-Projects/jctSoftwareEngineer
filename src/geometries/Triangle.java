@@ -1,10 +1,8 @@
 package geometries;
 
 
+import primitives.*;
 import primitives.Color;
-import primitives.Point3D;
-import primitives.Ray;
-import primitives.Vector;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -34,6 +32,18 @@ public class Triangle extends Polygon{
     public Triangle(Color color,Point3D... points){
         this(points);
         _emission = color;
+    }
+
+    /**
+     * Constructs and initialized a Triangle by color, 3 points and material
+     * @param color
+     * @param material
+     * @param points
+     */
+    public Triangle(Color color, Material material, Point3D... points){
+        this(points);
+        _emission = color;
+        _material = material;
     }
 
     /**

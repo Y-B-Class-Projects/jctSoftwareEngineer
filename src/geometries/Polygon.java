@@ -84,6 +84,18 @@ public class Polygon extends Geometry {
         this._emission = color;
     }
 
+    /**
+     * Constructs and initialized a polygon by color, list of Point3D and material
+     * @param color
+     * @param vertices
+     * @param material
+     */
+    public Polygon(Color color,Material material ,Point3D... vertices){
+        this(vertices);
+        this._emission = color;
+        this._material = material;
+    }
+
     @Override
     public Vector getNormal(Point3D point) {
         return _plane.getNormal(point);

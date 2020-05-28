@@ -17,7 +17,7 @@ public interface LightSource {
      * @param p point in the 3D space
      * @return the color of this specific point
      */
-    public Color getintensity(Point3D p);
+    public Color getIntensity(Point3D p);
 
     /***
      * function to prevent the vector of the direction

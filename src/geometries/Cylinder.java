@@ -1,9 +1,6 @@
 package geometries;
 
-import primitives.Color;
-import primitives.Point3D;
-import primitives.Ray;
-import primitives.Vector;
+import primitives.*;
 
 /**
  * Cylinder class represent a cylinder in the space by radius and height
@@ -35,6 +32,20 @@ public class Cylinder extends Tube
     public Cylinder(Color color,double _radius ,  Ray _exisRay , double _height ){
         this(_radius , _exisRay , _height);
         _emission = color;
+    }
+
+    /**
+     * Constructs and initialized a Cylinder
+     * @param color
+     * @param material
+     * @param _radius
+     * @param _exisRay
+     * @param _height
+     */
+    public Cylinder(Color color, Material material, double _radius , Ray _exisRay , double _height ){
+        this(_radius , _exisRay , _height);
+        _emission = color;
+        _material = material;
     }
 
     /**

@@ -4,7 +4,7 @@ import primitives.Color;
 import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
-
+import primitives.Material;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,6 +61,33 @@ public class Plane extends Geometry {
 
     /**
      * Constructs and initialized a Plane by point, normal vector and color.
+     * @param color plane color
+     * @param material
+     * @param point3D point
+     * @param _normal normal
+     */
+    public Plane(Color color,Material material, Point3D point3D , Vector _normal){
+        this(point3D , _normal);
+        this._emission = color;
+        this._material = material;
+    }
+
+    /**
+     * Constructs and initialized a Plane by 3 points, color and material
+     * @param color plane color
+     * @param material
+     * @param p1 point
+     * @param p2 point for normal
+     * @param p3 point for normal
+     */
+    public Plane(Color color ,Material material, Point3D p1 , Point3D p2 , Point3D p3){
+        this(p1 , p2 ,p3);
+        this._emission = color;
+        this._material = material;
+    }
+
+    /**
+     * Constructs and initialized a Plane by point, normal vector, color and material
      * @param color plane color
      * @param point3D point
      * @param _normal normal

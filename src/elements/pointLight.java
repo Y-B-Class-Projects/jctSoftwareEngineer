@@ -32,7 +32,7 @@ public class pointLight extends Light implements LightSource {
     }
 /********   functions    *******/
     @Override
-    public Color getintensity(Point3D p) {
+    public Color getIntensity(Point3D p) {
         return null;
     }
 
