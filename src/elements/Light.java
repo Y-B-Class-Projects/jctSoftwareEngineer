@@ -7,7 +7,7 @@ import static java.lang.System.out;
 /***
  * abstract class to represent light source model!
  * meaning it represent the rays that spreading from the source light
- * to the objects(התפשטות קרני האור)
+ * to the objects
  */
 
 abstract class Light {

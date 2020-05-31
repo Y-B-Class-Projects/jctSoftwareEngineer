@@ -7,7 +7,7 @@ import primitives.Vector;
 /***
  * interface LightSource to represent, how the light energy L will
  * be reflected to the camera!
- * for this we will use the Phong Reflectence Model (החזרת האור למצלמה)
+ * for this we will use the Phong Reflectence Model
  */
 
 public interface LightSource {
