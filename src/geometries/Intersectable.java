@@ -20,7 +20,7 @@ public interface Intersectable
          * @param geometry
          * @param point
          */
-        public GeoPoint(Geometry geometry , Point3D point){
+        public GeoPoint(Geometry geometry , Point3D point) {
             this.geometry = geometry;
             this.point = point;
         }
@@ -37,11 +37,9 @@ public interface Intersectable
 
             GeoPoint geoPoint = (GeoPoint) o;
 
-            if (geometry != null ? !geometry.equals(geoPoint.geometry) : geoPoint.geometry != null) return false;
-            return point != null ? point.equals(geoPoint.point) : geoPoint.point == null;
+            return ((geometry.equals(geoPoint.geometry)) && (point.equals(geoPoint.point)));
         }
     }
-
 
     List<GeoPoint> findIntsersections(Ray ray);
 }

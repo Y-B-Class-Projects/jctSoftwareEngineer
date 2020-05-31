@@ -156,6 +156,6 @@ public class Point3D {
      */
     public double distance(Point3D point3D)
     {
-        return distanceSquared(point3D) * distanceSquared(point3D);
+        return Math.sqrt(distanceSquared(point3D));
     }
 }

@@ -4,6 +4,8 @@ package com.company;
  * Yisrael Rolnick, 206672057, yesroelr@gmail.com
  * Baruch Baksht, 211302088, bakshtb@gmail.com
  */
+import geometries.Intersectable;
+import geometries.Plane;
 import geometries.Triangle;
 import primitives.*;
 
@@ -26,6 +28,11 @@ public final class Main {
      * @param args irrelevant here
      */
     public static void main(String[] args) {
+
+        Intersectable.GeoPoint A = new Intersectable.GeoPoint(new Plane(new Point3D(1,1,1) ,  new Vector(1,1,1)) , new Point3D(1,1,1));
+        Intersectable.GeoPoint B = new Intersectable.GeoPoint(new Plane(new Point3D(1,1,1) ,  new Vector(1,1,1)) , new Point3D(1,1,1));
+
+        out.println(A.equals(B));
 
         try { // test zero vector
             new Vector(0, 0, 0);

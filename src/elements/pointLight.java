@@ -27,7 +27,7 @@ public class pointLight extends Light implements LightSource {
      */
     public pointLight(Color color, Point3D _position, double _kC, double _kl, double _kQ) {
         super(color);
-        this._position = _position;
+        this._position = new Point3D(_position);
         this._kC = _kC;
         this._kl = _kl;
         this._kQ = _kQ;
@@ -41,6 +41,6 @@ public class pointLight extends Light implements LightSource {
 
     @Override
     public Vector getL(Point3D p) {
-        return (p.subtruct(_position)).normalized();
+        return (p.subtruct(_position)).normalize();
     }
 }
