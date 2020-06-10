@@ -25,6 +25,7 @@ public class Render {
      */
    private Scene scene;
    private ImageWriter imageWriter;
+   private static final double DELTA = 0.1;
 
     /*********     constructor   ***********/
     /***
@@ -89,8 +90,10 @@ public class Render {
        for (LightSource lightSource : scene.get_lights()) {
            Vector l = lightSource.getL(intersection.point);
            if (signum(n.dotProduct(l)) == signum(n.dotProduct(v)) && !isZero(n.dotProduct(l)) && !isZero(n.dotProduct(v))) {
-               Color lightIntensity = lightSource.getIntensity(intersection.point);
-               color = color.add(calcDiffusive(kd, l, n, lightIntensity), calcSpecular(ks, l, n, v, nShininess, lightIntensity));
+               if (unshaded(l, n, intersection)){
+                   Color lightIntensity = lightSource.getIntensity(intersection.point);
+                   color = color.add(calcDiffusive(kd, l, n, lightIntensity), calcSpecular(ks, l, n, v, nShininess, lightIntensity));
+               }
            }
        }
        return color;
@@ -175,4 +178,16 @@ public class Render {
    public void writeToImage(){
        imageWriter.writeToImage();
    }
+
+
+    private boolean unshaded(Vector l, Vector n, GeoPoint geopoint) {
+        Vector lightDirection = l.scale(-1); // from point to light source
+
+        Vector delta = n.scale(n.dotProduct(lightDirection) > 0 ? DELTA : - DELTA);
+        Point3D point = geopoint.point.add(delta);
+
+        Ray lightRay = new Ray(point, lightDirection);
+        List<GeoPoint> intersections = scene.get_geometries().findIntsersections(lightRay);
+        return intersections == null;
+    }
 }
