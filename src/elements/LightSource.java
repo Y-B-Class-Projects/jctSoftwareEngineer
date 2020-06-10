@@ -12,6 +12,12 @@ import primitives.Vector;
 
 public interface LightSource {
 
+    /**
+     * return the distance from the LightSource to the point
+     * @param point point for distance calculation
+     * @return distance
+     */
+    double getDistance(Point3D point);
     /***
      * function to prevent the color of the specific light
      * @param p point in the 3D space

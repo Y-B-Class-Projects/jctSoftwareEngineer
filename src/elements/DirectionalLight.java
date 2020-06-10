@@ -22,7 +22,13 @@ public class DirectionalLight extends Light implements LightSource{
         super(color);
         this._direction = _direction;
     }
-/*********     functions     ***********/
+
+    @Override
+    public double getDistance(Point3D point) {
+        return Double.POSITIVE_INFINITY;
+    }
+
+    /*********     functions     ***********/
     @Override
     public Color getIntensity(Point3D p) {
         return _intensity;

@@ -41,5 +41,10 @@ public interface Intersectable
         }
     }
 
+    /**
+     * return all intsersections between ray and the object (geometry)
+     * @param ray
+     * @return
+     */
     List<GeoPoint> findIntsersections(Ray ray);
 }

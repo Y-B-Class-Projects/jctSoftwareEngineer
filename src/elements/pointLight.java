@@ -32,7 +32,13 @@ public class pointLight extends Light implements LightSource {
         this._kl = _kl;
         this._kQ = _kQ;
     }
-/********   functions    *******/
+
+    @Override
+    public double getDistance(Point3D point) {
+        return _position.distance(point);
+    }
+
+    /********   functions    *******/
     @Override
     public Color getIntensity(Point3D p) {
         double d = p.distance(_position);

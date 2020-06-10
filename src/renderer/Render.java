@@ -90,7 +90,7 @@ public class Render {
        for (LightSource lightSource : scene.get_lights()) {
            Vector l = lightSource.getL(intersection.point);
            if (signum(n.dotProduct(l)) == signum(n.dotProduct(v)) && !isZero(n.dotProduct(l)) && !isZero(n.dotProduct(v))) {
-               if (unshaded(l, n, intersection)){
+               if (unshaded(l, n, intersection , lightSource)){
                    Color lightIntensity = lightSource.getIntensity(intersection.point);
                    color = color.add(calcDiffusive(kd, l, n, lightIntensity), calcSpecular(ks, l, n, v, nShininess, lightIntensity));
                }
@@ -180,7 +180,14 @@ public class Render {
    }
 
 
-    private boolean unshaded(Vector l, Vector n, GeoPoint geopoint) {
+    /**
+     * Returns true if the point on a geometric object is shaded
+     * @param l vector from light to the point
+     * @param n vector normal
+     * @param geopoint the geometric object + point on it
+     * @return
+     */
+    private boolean unshaded(Vector l, Vector n, GeoPoint geopoint , LightSource lightSource) {
         Vector lightDirection = l.scale(-1); // from point to light source
 
         Vector delta = n.scale(n.dotProduct(lightDirection) > 0 ? DELTA : - DELTA);
@@ -188,6 +195,14 @@ public class Render {
 
         Ray lightRay = new Ray(point, lightDirection);
         List<GeoPoint> intersections = scene.get_geometries().findIntsersections(lightRay);
-        return intersections == null;
+
+        if (intersections == null)
+            return true;
+        double lightDistance = lightSource.getDistance(geopoint.point);
+        for (GeoPoint gp : intersections) {
+            if (alignZero(gp.point.distance(geopoint.point) - lightDistance) <= 0)
+                return false;
+        }
+        return true;
     }
 }
