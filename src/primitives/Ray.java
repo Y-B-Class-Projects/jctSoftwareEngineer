@@ -41,11 +41,12 @@ public class Ray {
      * constructor for initialize Ray fields consider the DELTA ******************
      * @param head
      * @param direction
-     * @param normal
+     * @param n
      */
-    public Ray(Point3D head, Vector direction, Vector normal){
-        this._p0 = head.add(normal.scale(DELTA));
+    public Ray(Point3D head, Vector direction, Vector n){
+        this(head.add(n.scale((n.dotProduct(direction)) > 0 ? DELTA : - DELTA)),direction);
     }
+
     /********* getter's  *********/
 
     /**
