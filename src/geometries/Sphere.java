@@ -48,7 +48,9 @@ public class Sphere extends RadialGeometry {
         _emission = color;
         _material = material;
     }
-
+    public Sphere(Color color, Material material, double _radius, Point3D _center){
+        this(color,material,_center,_radius);
+    }
     /**
      * radius value getter
      * @return radius value

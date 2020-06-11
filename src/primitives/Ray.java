@@ -12,6 +12,7 @@ public class Ray {
     private Point3D _p0;
     /** direction */
     private Vector _dir;
+    private static final double DELTA = 0.1;
 
     /*******  constructor's  **********/
 
@@ -36,6 +37,15 @@ public class Ray {
         _dir = ray.get_dir();
     }
 
+    /***
+     * constructor for initialize Ray fields consider the DELTA ******************
+     * @param head
+     * @param direction
+     * @param normal
+     */
+    public Ray(Point3D head, Vector direction, Vector normal){
+        this._p0 = head.add(normal.scale(DELTA));
+    }
     /********* getter's  *********/
 
     /**
