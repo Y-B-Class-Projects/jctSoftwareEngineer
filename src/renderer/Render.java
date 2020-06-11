@@ -31,8 +31,8 @@ public class Render {
      */
    private Scene scene;
    private ImageWriter imageWriter;
-    private static final double DELTA = 0.1;
-    private static final int MAX_CALC_COLOR_LEVEL = 10;
+
+   private static final int MAX_CALC_COLOR_LEVEL = 10;
    private static final double MIN_CALC_COLOR_K = 0.001;
 
 
@@ -69,15 +69,11 @@ public class Render {
        for (int row = 0; row < Ny; ++row) {
            for (int column = 0; column < Nx; ++column) {
                Ray ray = camera.constructRayThroughPixel(Nx, Ny, column, row, distance, width, height);
-               //List<GeoPoint> intersectionPoints = geometries.findIntsersections(ray); //לא צריך שורה זו findIntsersectionsבעקבות שדרוג ה
                GeoPoint closestPoint = findCLosestIntersection(ray);
-              // if (intersectionPoints == null) { //לא צריך שורה זו findIntsersectionsבעקבות שדרוג ה
                if (closestPoint == null) {
                    imageWriter.writePixel(column, row, background);
                } else {
-                  // GeoPoint closestPoint = getClosesPoint(intersectionPoints); //לא צריך שורה זו findIntsersectionsבעקבות שדרוג ה
-                   java.awt.Color pixelColor = calcColor(closestPoint, ray).getColor(); //הוספתי פה שהפונקצייה תקבל גם את ray, צריך לוודא שזה נכון!
-                   imageWriter.writePixel(column, row, pixelColor);
+                   imageWriter.writePixel(column, row, calcColor(closestPoint, ray).getColor());
                }
            }
        }
@@ -200,11 +196,12 @@ public class Render {
      * @return the closest point to the ray
      */
    private GeoPoint getClosesPoint(List<GeoPoint> intersectionsPoints){
+       if(intersectionsPoints == null)
+           return null;
        Point3D cameraPoint = scene.get_camera().getPlaceable();
        GeoPoint closestPoint = null;
        double minDistance = Double.MAX_VALUE;
        double distance = 0;
-
        for(GeoPoint point: intersectionsPoints){
            distance = cameraPoint.distance(point.point);
            if (distance<minDistance){
@@ -245,14 +242,11 @@ public class Render {
     private boolean unshaded(LightSource light, Vector l, Vector n, GeoPoint geopoint) {
         Vector lightDirection = l.scale(-1); // from point to light source
 
-        Vector delta = n.scale(n.dotProduct(lightDirection) > 0 ? DELTA : - DELTA);// שורה זו לא מופיעה במצגת של המעבדה
-        Point3D point = geopoint.point.add(delta); // שורה זו לא מופיעה במצגת של המעבדה
-
-        Ray lightRay = new Ray(point, lightDirection, n); // הןספתי פה את הפרמטר-n כפי שמןפיע במצגת של המעבדה
+        Ray lightRay = new Ray(geopoint.point, lightDirection, n);
         List<GeoPoint> intersections = scene.get_geometries().findIntsersections(lightRay);
-        if (intersections.isEmpty()) return true;
+        if (intersections == null) return true;
 
-        double lightDistance = light.getDistance(geopoint.point); // !זה מה שכתוב בקובץ של המעבדה
+        double lightDistance = light.getDistance(geopoint.point);
         for (GeoPoint gp: intersections){
             if (alignZero(gp.point.distance(geopoint.point) -lightDistance) <= 0 &&
             gp.geometry.get_material().getkT() == 0)
@@ -290,6 +284,4 @@ public class Render {
     private GeoPoint findCLosestIntersection(Ray ray){
         return getClosesPoint(scene.get_geometries().findIntsersections(ray));
     }
-
-
 }

@@ -18,9 +18,7 @@ public class Material {
      * @param nShininess light is exponentially reduced.
      */
     public Material(double kD, double kS, int nShininess) {
-        this.kD = kD;
-        this.kS = kS;
-        this.nShininess = nShininess;
+        this(kD , kS  , 0 , 0 , nShininess);
     }
 
     /***
@@ -34,8 +32,8 @@ public class Material {
     public Material(double kD, double kS, double kT, double kR, int nShininess) {
         this.kD = kD;
         this.kS = kS;
-        this.kT = 0;
-        this.kR = 0;
+        this.kT = kT;
+        this.kR = kR;
         this.nShininess = nShininess;
     }
     /********    getter       **********/
