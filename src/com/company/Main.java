@@ -28,12 +28,6 @@ public final class Main {
      * @param args irrelevant here
      */
     public static void main(String[] args) {
-
-        Intersectable.GeoPoint A = new Intersectable.GeoPoint(new Plane(new Point3D(1,1,1) ,  new Vector(1,1,1)) , new Point3D(1,1,1));
-        Intersectable.GeoPoint B = new Intersectable.GeoPoint(new Plane(new Point3D(1,1,1) ,  new Vector(1,1,1)) , new Point3D(1,1,1));
-
-        out.println(A.equals(B));
-
         try { // test zero vector
             new Vector(0, 0, 0);
             out.println("ERROR: zero vector does not throw an exception");
