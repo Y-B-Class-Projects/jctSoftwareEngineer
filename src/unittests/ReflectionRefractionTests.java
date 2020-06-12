@@ -3,6 +3,7 @@
  */
 package unittests;
 
+import geometries.Plane;
 import org.junit.Test;
 
 import elements.*;
@@ -11,6 +12,8 @@ import geometries.Triangle;
 import primitives.*;
 import renderer.*;
 import scene.Scene;
+
+import static java.lang.System.out;
 
 /**
  * Tests for reflection and transparency functionality, test for partial shadows
@@ -100,6 +103,37 @@ public class ReflectionRefractionTests {
 				new Point3D(60, -50, 0), new Vector(0, 0, 1), 1, 4E-5, 2E-7));
 
 		ImageWriter imageWriter = new ImageWriter("shadow with transparency", 200, 200, 600, 600);
+		Render render = new Render(imageWriter, scene);
+
+		render.renderImage();
+		render.writeToImage();
+	}
+
+	/**
+	 * Produce a picture of a two triangles lighted by a spot light with a partially transparent Sphere
+	 *  producing partial shadow
+	 */
+	@Test
+	public void Test() {
+		Scene scene = new Scene("Test scene");
+		scene.setCamera(new Camera(new Point3D(0, 0, -10000), new Vector(0, 0, 1), new Vector(0, -1, 0)));
+		scene.setDistance(10000);
+		scene.setBackground(new Color(166,166,166));
+		scene.setAmbientLight(new AmbientLight(new Color(255, 255, 255), 0.1));
+
+		scene.addGeometries(
+				new Sphere(new Color(225, 0, 0), new Material(0.25, 0.25, 20, 0.5, 0), 400, new Point3D(-950, 900, 1000)),
+				new Sphere(new Color(0, 225, 0), new Material(0.25, 0.25, 20, 0.5, 0), 400, new Point3D(10, 900, 1000)),
+				new Sphere(new Color(0, 0, 225), new Material(0.25, 0.25, 20, 0.5, 0), 400, new Point3D(-950, -50, 1000)),
+				new Triangle(new Color(212, 212, 212), new Material(0, 0, 0, 0, 1), new Point3D(1500, 1500, 1500),
+						new Point3D(-1500, -1500, 1500), new Point3D(1500, -1500, -3000)),
+		  		new Triangle(new Color(20, 20, 20), new Material(0, 0, 0, 0, 0), new Point3D(1500, 1500, 1500),
+				new Point3D(-1500, -1500, 1500), new Point3D(-1500, 1500, 2000)));
+
+
+		scene.addLights(new DirectionalLight(new Color(300, 150, 150), new Vector(0, 0, -1)));
+
+		ImageWriter imageWriter = new ImageWriter("Test", 2500, 2500, 500, 500);
 		Render render = new Render(imageWriter, scene);
 
 		render.renderImage();
