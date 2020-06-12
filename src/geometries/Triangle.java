@@ -73,9 +73,9 @@ public class Triangle extends Polygon{
 
         Point3D P0 = ray.get_p0();
 
-        Vector v1 = _vertices.get(0).subtruct(P0);
-        Vector v2 = _vertices.get(1).subtruct(P0);
-        Vector v3 = _vertices.get(2).subtruct(P0);
+        Vector v1 = _vertices.get(0).subtruct(P0).normalized();
+        Vector v2 = _vertices.get(1).subtruct(P0).normalized();
+        Vector v3 = _vertices.get(2).subtruct(P0).normalized();
 
         Vector N1 = v1.crossProduct(v2).normalize();
         Vector N2 = v2.crossProduct(v3).normalize();

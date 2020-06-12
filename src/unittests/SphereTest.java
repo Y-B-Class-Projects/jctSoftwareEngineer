@@ -81,7 +81,7 @@ class SphereTest {
         // TC12: Ray starts at sphere and goes outside (0 points)
 
         result = sphere.findIntsersections(new Ray(new Point3D(2, 0, 0), new Vector(1, 0, 0)));
-        assertEquals("TC12: Wrong number of points", 0, result.size());
+        assertEquals("TC12: Wrong number of points", null, result);
 
         // **** Group: Ray's line goes through the center
         // TC13: Ray starts before the sphere (2 points)
@@ -127,7 +127,7 @@ class SphereTest {
 
         result = sphere.findIntsersections(new Ray(new Point3D(2, 0, 0), new Vector(1, 0, 0)));
 
-        assertEquals("TC17: Wrong number of points", 0, result.size());
+        assertEquals("TC17: Wrong number of points", null, result);
 
         // TC18: Ray starts after sphere (0 points)
 

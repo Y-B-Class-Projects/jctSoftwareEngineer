@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f2d57631-cd98-4b0b-9d61-aa70327b6201" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/base render test.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/base render test.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/geometries/Geometry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/geometries/Geometry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/geometries/Sphere.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/geometries/Sphere.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Ray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Ray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Vector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Vector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shadow with transparency.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/shadow with transparency.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sphereDirectional.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/sphereDirectional.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spherePoint.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/spherePoint.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sphereSpot.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/sphereSpot.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sphereTriangleInitial.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/sphereTriangleInitial.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sphereTriangleMove1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/sphereTriangleMove1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sphereTriangleMove2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/sphereTriangleMove2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sphereTriangleSpot1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/sphereTriangleSpot1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sphereTriangleSpot2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/sphereTriangleSpot2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/DirectionalLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/DirectionalLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/ReflectionRefractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/ReflectionRefractionTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/SphereTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/SphereTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trianglesDirectional.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/trianglesDirectional.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trianglesPoint.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/trianglesPoint.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trianglesSphere.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/trianglesSphere.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trianglesSpot.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/trianglesSpot.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twoSpheres.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/twoSpheres.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twoSpheresMirrored.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/twoSpheresMirrored.jpg" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="recitation5" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="ReflectionRefractionTests" />
+    </enabled-run-configurations>
+  </component>
+  <component name="ProjectId" id="1d7jzfaCRnYFHuusAQBfkK5Pylk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\baruch\IdeaProjects\jctSoftwareEngineer1\src\unittests" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.unittests in jctSoftwareEngineer">
+    <configuration name="CameraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jctSoftwareEngineer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.CameraTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReflectionRefractionTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jctSoftwareEngineer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.ReflectionRefractionTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RenderTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jctSoftwareEngineer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.RenderTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SphereTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jctSoftwareEngineer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.SphereTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="unittests in jctSoftwareEngineer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jctSoftwareEngineer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.unittests in jctSoftwareEngineer" />
+        <item itemvalue="JUnit.ReflectionRefractionTests" />
+        <item itemvalue="JUnit.RenderTests" />
+        <item itemvalue="JUnit.CameraTest" />
+        <item itemvalue="JUnit.SphereTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2d57631-cd98-4b0b-9d61-aa70327b6201" name="Default Changelist" comment="" />
+      <created>1591783289595</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591783289595</updated>
+    </task>
+    <task id="LOCAL-00001" summary="unshaded function">
+      <created>1591794981055</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591794981056</updated>
+    </task>
+    <task id="LOCAL-00002" summary="unshaded function">
+      <created>1591795077067</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591795077067</updated>
+    </task>
+    <task id="LOCAL-00003" summary="done shadow">
+      <created>1591808574241</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591808574241</updated>
+    </task>
+    <task id="LOCAL-00004" summary="done shadow tests">
+      <created>1591817770671</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1591817770671</updated>
+    </task>
+    <task id="LOCAL-00005" summary="done light testes">
+      <created>1591865490074</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1591865490074</updated>
+    </task>
+    <task id="LOCAL-00006" summary="done light testes">
+      <created>1591886328791</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1591886328791</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="unshaded function" />
+    <MESSAGE value="done shadow" />
+    <MESSAGE value="done shadow tests" />
+    <MESSAGE value="done light testes" />
+    <option name="LAST_COMMIT_MESSAGE" value="done light testes" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="393" y="16" key="#ShadowTests.SphereTriangleSpot2" timestamp="1591863991622">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="393" y="16" key="#ShadowTests.SphereTriangleSpot2/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591863991622" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591863749200">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591863749200" />
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1591805782652">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591805782652" />
+    <state x="498" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591783345341">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591783345341" />
+    <state x="421" y="0" key="CommitChangelistDialog2" timestamp="1591886328029">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="421" y="0" key="CommitChangelistDialog2/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591886328029" />
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1591864416858">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="154" key="FileChooserDialogImpl/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591864416858" />
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1591956351319">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591956351319" />
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591907192429" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1591956351319">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591956351319" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591907192428" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1591956351318">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591956351318" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591907192428" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1591956351319">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591956351319" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591907192429" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1591905859842">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591905859842" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1591905859842">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591905859842" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1591905859842">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591905859842" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1591905859842">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591905859842" />
+    <state x="459" y="117" key="NewModule_or_Project.wizard" timestamp="1591863881630">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="459" y="117" key="NewModule_or_Project.wizard/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591863881630" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1591864417840">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591864417840" />
+    <state x="2169" y="0" key="SettingsEditor/1920.0.1536.824/0.0.1536.824@1920.0.1536.824" timestamp="1591797383241" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1591886330234">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591886330234" />
+    <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1591864009565">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591864009565" />
+    <state x="592" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591886316999">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="592" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591886316999" />
+    <state x="209" y="33" key="new project wizard" timestamp="1591863795527">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="33" key="new project wizard/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591863795527" />
+    <state x="481" y="170" key="refactoring.ChangeSignatureDialog" timestamp="1591895224924">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="481" y="170" key="refactoring.ChangeSignatureDialog/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591895224924" />
+  </component>
+</project>
