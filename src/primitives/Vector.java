@@ -118,9 +118,10 @@ public class Vector {
      * @return result of the scalar multiplication
      */
     public Vector scale(double scalar) {
-        return new Vector(this._head.get_x().get_coord() * scalar,
+        Point3D point3D= new Point3D(this._head.get_x().get_coord() * scalar,
                           this._head.get_Y().get_coord() * scalar,
                           this._head.get_z().get_coord() * scalar);
+        return new Vector(point3D);
     }
 
     /**

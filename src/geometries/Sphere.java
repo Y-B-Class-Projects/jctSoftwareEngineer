@@ -5,6 +5,7 @@ import primitives.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.System.out;
 import static primitives.Util.alignZero;
 
 /**
@@ -113,15 +114,16 @@ public class Sphere extends RadialGeometry {
             double t1 = alignZero(tm + th);
             double t2 = alignZero(tm - th);
 
-            if(t1 < 0 && t2 < 0)
+            if(t1 <= 0 && t2 <= 0)
                 return  null;
 
-            if (t1 > 0)
-                result.add(new GeoPoint(this , ray.getPoint(t1)));
+            if (t1 > 0) {
+                result.add(new GeoPoint(this, ray.getPoint(t1)));
+            }
 
-            if (t1 != t2 && t2 > 0)
-                result.add(new GeoPoint(this , ray.getPoint(t2)));
-
+            if (t1 != t2 && t2 > 0) {
+                result.add(new GeoPoint(this, ray.getPoint(t2)));
+            }
             return result;
         }
     }

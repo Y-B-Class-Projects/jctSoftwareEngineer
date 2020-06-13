@@ -18,7 +18,7 @@ public class Material {
      * @param nShininess light is exponentially reduced.
      */
     public Material(double kD, double kS, int nShininess) {
-        this(kD , kS  , 0 , 0 , nShininess);
+        this(kD , kS , nShininess, 0 , 0 );
     }
 
     /***
@@ -29,7 +29,7 @@ public class Material {
      * @param kT the factor of the transparency
      * @param kR the factor of the reflection
      */
-    public Material(double kD, double kS, double kT, double kR, int nShininess) {
+    public Material(double kD, double kS,  int nShininess, double kT, double kR) {
         this.kD = kD;
         this.kS = kS;
         this.kT = kT;

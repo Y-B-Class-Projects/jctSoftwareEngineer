@@ -57,7 +57,7 @@ public abstract class Geometry implements Intersectable {
      * @return the material that the object made from
      */
     public Material get_material() {
-        return new Material(_material.getkD(), _material.getkS(), _material.getnShininess());
+        return new Material(_material.getkD(), _material.getkS(), _material.getnShininess() , _material.getkT() , _material.getkR());
     }
 
     @Override

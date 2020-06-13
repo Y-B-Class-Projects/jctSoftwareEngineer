@@ -2,6 +2,9 @@ package primitives;
 
 import java.util.Objects;
 
+import static java.lang.System.out;
+import static primitives.Util.isZero;
+
 /**
  * Class Ray, basic object in geometry - group of point's that represent a ray.
  */
@@ -33,8 +36,7 @@ public class Ray {
      * @param ray Ray to copy to the object.
      */
     public Ray(Ray ray) {
-        _p0 = ray.get_p0();
-        _dir = ray.get_dir();
+        this(ray._p0 , ray._dir);
     }
 
     /***
@@ -44,7 +46,12 @@ public class Ray {
      * @param n
      */
     public Ray(Point3D head, Vector direction, Vector n){
-        this(head.add(n.scale((n.dotProduct(direction)) > 0 ? DELTA : - DELTA)),direction);
+        _dir = new Vector(direction).normalized();
+
+        double nv = n.dotProduct(direction);
+
+        Vector normalDelta = n.scale((nv > 0 ? DELTA : -DELTA));
+        _p0 = head.add(normalDelta);
     }
 
     /********* getter's  *********/
@@ -71,7 +78,6 @@ public class Ray {
      * @return size of the Ray
      */
     public Point3D getPoint(double t) {
-
         return new Point3D(this._p0).add(this._dir.scale(t));
     }
     /******** ToString **********/
