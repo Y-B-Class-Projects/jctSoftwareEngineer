@@ -40,10 +40,11 @@ public class Ray {
     }
 
     /***
-     * constructor for initialize Ray fields consider the DELTA ******************
-     * @param head
-     * @param direction
-     * @param n
+     * constructor that used also for moving the point out of the object, the point
+     * will be exactly at the intersection with the object.
+     * @param head point inside the object
+     * @param direction direction of the ray
+     * @param n vector normal to the direction and to the object.
      */
     public Ray(Point3D head, Vector direction, Vector n){
         _dir = new Vector(direction).normalized();

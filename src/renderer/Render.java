@@ -108,10 +108,10 @@ public class Render {
    }
 
     /***
-     *
-     * @param gp
-     * @param ray
-     * @return
+     * function to calculate the color
+     * @param gp geo point
+     * @param ray ray
+     * @return sum of the colors
      */
     private Color calcColor(GeoPoint gp, Ray ray, int level, double k){
         Color color = gp.geometry.get_emission(); // remove ambition light
@@ -160,26 +160,29 @@ public class Render {
 
 
     /**
-     * function to calculate the diffusive
-     * @param kd
-     * @param l
-     * @param n
-     * @param lightIntensity
-     * @return
+     * function to evaluate the diffusive factor of the light, according to "Phong model"
+     * the diffusive factor represent the light reflected from the object to everywhere
+     * (in 180 degree from the point of the intersection between object and source light ray).
+     * @param kd the brightness
+     * @param l vector from the light to the object.
+     * @param n vector normal to the object.
+     * @param lightIntensity the intensity of the light.
+     * @return the diffusive color
      */
     private Color calcDiffusive(double kd, Vector l, Vector n, Color lightIntensity) {
         return lightIntensity.scale(kd * Math.abs(l.dotProduct(n)));
     }
 
     /**
-     * function to calculate the specular
-     * @param ks
-     * @param l
-     * @param n
-     * @param v
-     * @param nShininess
-     * @param lightIntensity
-     * @return
+     * function to evaluate the specular factor of the light, according to "Phong model",
+     * is the direct light that is reflected from the object.
+     * @param ks factor of the diffusive component
+     * @param l vector from the light to the object.
+     * @param n vector normal to the object.
+     * @param v the vector reflected from the object.
+     * @param nShininess the object shininess.
+     * @param lightIntensity the intensity of the light.
+     * @return the specular color
      */
     private Color calcSpecular(double ks, Vector l, Vector n, Vector v, int nShininess, Color lightIntensity) {
        Vector r = l.subtruct(n.scale(2*l.dotProduct(n))).normalized();  // r = l - 2*(l-n)*n
@@ -240,7 +243,15 @@ public class Render {
        imageWriter.writeToImage();
    }
 
-
+    /***
+     * function to check if the original ray is moving through any object,
+     * that will make a shadow on another object.
+     * @param light the light on the object.
+     * @param l vector to the object from the camera through the "glass"
+     * @param n normal to the object.
+     * @param geopoint point on the object.
+     * @return if there is a shadow or not.
+     */
     private boolean unshaded(LightSource light, Vector l, Vector n, GeoPoint geopoint) {
         Vector lightDirection = l.scale(-1); // from point to light source
 
@@ -259,7 +270,16 @@ public class Render {
         return true;
     }
 
-
+    /***
+     * function to evaluate the factor of the all the reflection on the object,
+     * we take all the glasses that the original ray move through it and evaluate
+     * the effect on the pixel.
+     * @param ls the light through the "glass"
+     * @param l vector of the light
+     * @param n normal to the object
+     * @param geopoint point on the object
+     * @return transparency factor of all the "glasses" together.
+     */
     private double transparency(LightSource ls, Vector l, Vector n, GeoPoint geopoint) {
         Vector lightDirection = l.scale(-1); // from point to light source
 
@@ -282,21 +302,22 @@ public class Render {
     }
 
     /***
-     *
-     * @param point
-     * @param r
-     * @return
+     * function to evaluate the "Refracted Ray" - the ray that goes into the object,
+     * and move a little bit. (for example: straw inside glass of water)
+     * @param point the intersection of the ray with the object.
+     * @param r the original ray from the camera.
+     * @return the resulted ray, after the calculation.
      */
     private Ray constructRefractedRay(Vector n,Point3D point, Ray r) {
         return new Ray(point, r.get_dir() , n);
     }
 
     /***
-     * construct reflected ray******************
-     * @param n
-     * @param point3D
-     * @param r
-     * @return
+     * function to evaluate the reflected ray from the object, (Mirror)
+     * @param n vector normal for calculation
+     * @param point3D the intersection point on the object.
+     * @param r the original ray, from the camera to the object.
+     * @return ray reflected to the original ray.
      */
     public Ray constructReflectedRay(Vector n, Point3D point3D, Ray r){
         Vector dir=new Vector(r.get_dir());
