@@ -72,7 +72,7 @@
       <recent name="C:\Users\baruch\IdeaProjects\jctSoftwareEngineer1\src\unittests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ReflectionRefractionTests">
+  <component name="RunManager" selected="JUnit.unittests in jctSoftwareEngineer">
     <configuration name="CameraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jctSoftwareEngineer" />
       <extension name="coverage">
@@ -150,9 +150,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.unittests in jctSoftwareEngineer" />
         <item itemvalue="JUnit.ReflectionRefractionTests" />
         <item itemvalue="JUnit.ReflectionRefractionTests.Test" />
-        <item itemvalue="JUnit.unittests in jctSoftwareEngineer" />
         <item itemvalue="JUnit.RenderTests" />
         <item itemvalue="JUnit.CameraTest" />
       </list>
@@ -225,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591962780696</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="done">
+      <created>1591969211873</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1591969211873</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,10 +277,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591783345341" />
-    <state x="421" y="0" key="CommitChangelistDialog2" timestamp="1591962779668">
+    <state x="421" y="0" key="CommitChangelistDialog2" timestamp="1591969210544">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="421" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1591962779668" />
+    <state x="421" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1591969210544" />
     <state x="421" y="0" key="CommitChangelistDialog2/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591886328029" />
     <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1591864416858">
       <screen x="0" y="0" width="1536" height="824" />
@@ -332,10 +339,10 @@
     </state>
     <state x="249" y="0" key="SettingsEditor/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591864417840" />
     <state x="2169" y="0" key="SettingsEditor/1920.0.1536.824/0.0.1536.824@1920.0.1536.824" timestamp="1591797383241" />
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1591962782046">
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1591969213514">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591962782046" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591969213514" />
     <state x="361" y="132" key="Vcs.Push.Dialog.v2/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591886330234" />
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1591864009565">
       <screen x="0" y="0" width="1536" height="824" />
