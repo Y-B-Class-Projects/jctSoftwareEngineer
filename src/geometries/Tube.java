@@ -5,7 +5,7 @@ import primitives.*;
 import java.util.List;
 
 /**
- * Tube class represent a Tube in the space by radius and ray
+ * Tube class represent a Tube in the space by radius and ray - לברר מה זה, זה דומה לגליל אבל זה לא
  */
 public class Tube extends RadialGeometry {
 

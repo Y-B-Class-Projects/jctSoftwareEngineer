@@ -5,7 +5,9 @@ import primitives.*;
 import java.util.List;
 
 /**
- * Interface for all Geometry Objects.
+ * abstract class for all Geometry Objects!
+ * the Geometry Objects has to contain: Color, Material.
+ * and also function of: "getNormal()", "findIntersection()".
  */
 public abstract class Geometry implements Intersectable {
     protected Color _emission;
@@ -40,7 +42,8 @@ public abstract class Geometry implements Intersectable {
     /**
      * normal getter
      * @param point3D 3D point
-     * @return Vector normal to the body at the received point
+     * @return Vector normal to the body at the received point. (normal to the object, at the
+     * object point intersection)
      */
     public abstract Vector getNormal(Point3D point3D);
 

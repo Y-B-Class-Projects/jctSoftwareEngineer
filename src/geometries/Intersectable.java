@@ -9,16 +9,16 @@ import java.util.List;
 public interface Intersectable
 {
     /**
-     *Class of Representation geometry object and point on it
+     *Class of Representation geometry object and point on it, (the point inside the geometry)
      */
     public static class GeoPoint {
         public Geometry geometry;
         public Point3D point;
 
         /**
-         * constructor
-         * @param geometry
-         * @param point
+         * constructor GeoPoint class
+         * @param geometry the geometry object that intersect the ray
+         * @param point the specific point on the geometry
          */
         public GeoPoint(Geometry geometry , Point3D point) {
             this.geometry = geometry;
@@ -42,9 +42,10 @@ public interface Intersectable
     }
 
     /**
-     * return all intsersections between ray and the object (geometry)
-     * @param ray
-     * @return
+     * return all intersections between ray and the object (geometry)
+     * @param ray ray with the intersection
+     * @return for each different geometry object that intersect with the ray return the intersect point (that seating
+     * on the geometry object).
      */
     List<GeoPoint> findIntsersections(Ray ray);
 }

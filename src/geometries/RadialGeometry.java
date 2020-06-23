@@ -13,6 +13,8 @@ public abstract class RadialGeometry extends Geometry
     /** radius of the object */
     protected double _radius;
 
+/**********   constructor's    *************/
+
     /**
      * Constructs and initialized a RadialGeometry object by radius.
      * @param _radius the radius of the RadialGeometry object
@@ -54,7 +56,7 @@ public abstract class RadialGeometry extends Geometry
         _emission = radialGeometry._emission;
         _material = radialGeometry._material;
     }
-
+/**********   getter's    *************/
     /**
      * radius value getter
      * @return radius value
@@ -67,6 +69,9 @@ public abstract class RadialGeometry extends Geometry
      * Representation the object by a string
      * @return string that represents the object.
      */
+
+/**********   function's    *************/
+
     @Override
     public String toString() {
         return "RadialGeometry{" +

@@ -15,6 +15,7 @@ public class Ray {
     private Point3D _p0;
     /** direction */
     private Vector _dir;
+    /**  */
     private static final double DELTA = 0.1;
 
     /*******  constructor's  **********/

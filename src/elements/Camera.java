@@ -1,9 +1,13 @@
 package elements;
 
 import org.junit.jupiter.api.Test;
+import primitives.Color;
 import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
+
+import java.util.LinkedList;
+import java.util.Random;
 
 import static java.lang.System.out;
 
@@ -85,14 +89,117 @@ public class Camera {
      * @param screenHeight size of view plane height
      * @return a rya start from camera eye through pixel to the objects
      */
-    public Ray constructRayThroughPixel(int nX, int nY, int j, int i, double screenDistance, double screenWith, double screenHeight){
-
+    public LinkedList<Ray> constructRaysThroughPixel(int nX, int nY, int j, int i, double screenDistance, double screenWith, double screenHeight){
         //image center
         Point3D pCenter = placeable.add(v_to.scale(screenDistance));
+
+        // Ratio (Pixel with & height)
+        double Ry = screenHeight/nY;
+        double Rx = screenWith/nX;
+
+        // range of random for x
+        double Xmin = j * Rx;
+        double Xmax = (j+1) * Rx;
+
+        // range of random for y
+        double Ymin = i * Ry;
+        double Ymax = (i+1) * Ry;
+
+
+        LinkedList<Ray> ret = new LinkedList<Ray>();
+        double x;
+        double y;
+        Random rand = new Random();
+        for (int n = 0; n < 50 ; n++){
+            // create ray through random point in specific pixel at the view plane
+            x = Xmin + (Xmax - Xmin) * rand.nextDouble();
+            y = Ymin + (Ymax - Ymin) * rand.nextDouble();
+            ret.add(createRayTroughViewPlane(x, y, pCenter));
+        }
+        return ret;
+    }
+
+    /***
+     * build 5 boundary rays from camera through view plane (corners and center of specific pixel) to the objects
+     * (NOTE: this function not calculating the intersections with the geometries objects)
+     * @param nX with of pixel
+     * @param nY height of pixel
+     * @param j column index in the view plane
+     * @param i row index in the view plane
+     * @param screenDistance distance of pixel from camera eye
+     * @param screenWith size of view plane with
+     * @param screenHeight size of view plane height
+     * @return a rya start from camera eye through pixel to the objects
+     */
+    public LinkedList<Ray> constructBoundingRaysThroughPixel(int nX, int nY, int j, int i, double screenDistance, double screenWith, double screenHeight){
+        //image center
+        Point3D pCenter = placeable.add(v_to.scale(screenDistance));
+
+        // Ratio (Pixel with & height)
+        double Ry = screenHeight/nY;
+        double Rx = screenWith/nX;
+
+        // range of random for x and y
+        double Xmin = j * Rx;
+        double Xmax = (j+1) * Rx;
+        double Ymin = i * Ry;
+        double Ymax = (i+1) * Ry;
+
+        LinkedList<Ray> rays = new LinkedList<Ray>();
+        // center of pixel
+        rays.add(createRayTroughViewPlane((Xmax + Xmin)/2, (Ymax + Ymin)/2, pCenter));
+        // boundary of pixel
+        rays.add(createRayTroughViewPlane(Xmin, Ymin, pCenter));
+        rays.add(createRayTroughViewPlane(Xmin, Ymax, pCenter));
+        rays.add(createRayTroughViewPlane(Xmax, Ymin, pCenter));
+        rays.add(createRayTroughViewPlane(Xmax, Ymax, pCenter));
+       return rays;
+    }
+
+    /***
+     * function to build ray inside specific place in specific pixel.
+     * @param x x coordinate inside pixel. (not the original coordinate)
+     * @param y y coordinate inside pixel. (not the original coordinate)
+     * @param pCenter the center of the view plane
+     * @return build ray
+     */
+    private Ray createRayTroughViewPlane(double x, double y, Point3D pCenter){
+        if (x != 0) pCenter = pCenter.add(v_right.scale(x));
+        if (y != 0) pCenter = pCenter.add(v_up.scale(-y));
+        Vector vIJ = pCenter.subtruct(placeable).normalized();
+        return new Ray(placeable, vIJ);
+    }
+/***************   old function only for the test's   **********************/
+
+    /***
+     * build rays from camera through view plane (in specific pixel) to the objects
+     * (NOTE: this function not calculating the intersections with the geometries objects)
+     * @param nX with of pixel
+     * @param nY height of pixel
+     * @param j column index in the view plane
+     * @param i row index in the view plane
+     * @param screenDistance distance of pixel from camera eye
+     * @param screenWith size of view plane with
+     * @param screenHeight size of view plane height
+     * @return a rya start from camera eye through pixel to the objects
+     */
+    public Ray constructRayThroughPixel(int nX, int nY, int j, int i, double screenDistance, double screenWith, double screenHeight){
 
         //Ratio (pixel width & height)
         double Ry = screenHeight/nY;
         double Rx = screenWith/nX;
+
+        double Xmin = j * Rx;
+        double Xmax = (j+1) * Rx;
+
+        double Ymin = i * Ry;
+        double Ymax = (i+1) * Ry;
+
+
+        //image center
+        Point3D pCenter = placeable.add(v_to.scale(screenDistance));
+
+
 
         double xJ = (j - nX/2.0) * Rx + (Rx/2.0);
         double yI = (i - nY/2.0) * Ry + Ry/2.0;

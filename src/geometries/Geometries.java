@@ -5,7 +5,8 @@ import primitives.Ray;
 
 import java.lang.reflect.Array;
 import java.util.*;
-
+    /** class for represent list of "intersections" (GeoPoint), every element in the list contain
+     * intersection between specific Ray with geometry object */
 public class Geometries implements Intersectable {
 
     /**  list to contain group of geometries objects */

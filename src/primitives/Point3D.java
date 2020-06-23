@@ -119,7 +119,8 @@ public class Point3D {
     /**
      * Subtraction two Point3D
      * @param p2 point from space
-     * @return vector that contain the result of subtract the object with p2.
+     * @return vector that contain the result of subtract the object with p2.(the head of the resulted vector is pointed to the
+     * p2 direction)
      */
     public Vector subtruct(Point3D p2){
         return new Vector(new Point3D(this._x.get_coord() - p2._x.get_coord(), this._y.get_coord() - p2._y.get_coord(), this._z.get_coord() - p2._z.get_coord()));
@@ -128,7 +129,8 @@ public class Point3D {
     /**
      * Addition vector and Point3D.
      * @param vec vector to the Addition
-     * @return result of the Addition between vector and the object.
+     * @return result of the Addition between vector and the object. (take the point and move it at the vector direction
+     * the size of vector length)
      */
     public Point3D add(Vector vec){
         return new Point3D(this._x.get_coord() + vec.get_head().get_x().get_coord(),

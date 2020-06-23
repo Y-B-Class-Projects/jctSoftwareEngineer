@@ -3,7 +3,7 @@ package geometries;
 import primitives.*;
 
 /**
- * Cylinder class represent a cylinder in the space by radius and height
+ * Cylinder class represent a cylinder in the space by radius and height - גליל
  */
 public class Cylinder extends Tube
 {

@@ -26,8 +26,8 @@ public class Material {
      * @param kD the energy percent of Il that goes to the diffuse component
      * @param kS the energy percent of Il that goes to the specular component
      * @param nShininess light is exponentially reduced.
-     * @param kT the factor of the transparency
-     * @param kR the factor of the reflection
+     * @param kT the factor of the transparency שקיפות
+     * @param kR the factor of the reflection השתקפות
      */
     public Material(double kD, double kS,  int nShininess, double kT, double kR) {
         this.kD = kD;

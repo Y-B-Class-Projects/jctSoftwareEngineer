@@ -2,30 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2d57631-cd98-4b0b-9d61-aa70327b6201" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/shadow with transparency.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twoSpheres.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-Jun-20_4_28_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11-Jun-20_4_28_PM__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Render_Test.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base render test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/color render test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer1/META-INF/jctSoftwareEngineer1.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer1/jctSoftwareEngineer1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadow with transparency.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sphereDirectional.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spherePoint.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sphereSpot.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sphereTriangleInitial.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sphereTriangleMove1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sphereTriangleMove2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sphereTriangleSpot1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sphereTriangleSpot2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/elements/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/elements/Camera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/geometries/Geometries.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/geometries/Geometries.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/geometries/Geometry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/geometries/Geometry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/geometries/RadialGeometry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/geometries/RadialGeometry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Point3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Point3D.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Ray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Ray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Vector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Vector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/renderer/Render.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/renderer/Render.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Cylinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Cylinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Point3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Point3D.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Render.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trianglesDirectional.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trianglesPoint.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trianglesSphere.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trianglesSpot.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/twoSpheres.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/twoSpheresMirrored.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +74,7 @@
       <recent name="C:\Users\baruch\IdeaProjects\jctSoftwareEngineer1\src\unittests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.unittests in jctSoftwareEngineer">
+  <component name="RunManager" selected="JUnit.ReflectionRefractionTests">
     <configuration name="CameraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jctSoftwareEngineer" />
       <extension name="coverage">
@@ -150,8 +152,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.unittests in jctSoftwareEngineer" />
         <item itemvalue="JUnit.ReflectionRefractionTests" />
+        <item itemvalue="JUnit.unittests in jctSoftwareEngineer" />
         <item itemvalue="JUnit.ReflectionRefractionTests.Test" />
         <item itemvalue="JUnit.RenderTests" />
         <item itemvalue="JUnit.CameraTest" />
@@ -225,12 +227,12 @@
       <option name="project" value="LOCAL" />
       <updated>1591962780696</updated>
     </task>
-    <task id="LOCAL-00009" summary="done">
-      <created>1591969211873</created>
+    <task id="LOCAL-00009" summary="done commend javaDoc">
+      <created>1592134026984</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1591969211873</updated>
+      <updated>1592134026984</updated>
     </task>
     <option name="localTasksCounter" value="10" />
     <servers />
@@ -254,7 +256,8 @@
     <MESSAGE value="done shadow tests" />
     <MESSAGE value="done light testes" />
     <MESSAGE value="done" />
-    <option name="LAST_COMMIT_MESSAGE" value="done" />
+    <MESSAGE value="done commend javaDoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="done commend javaDoc" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="144" key="#Plugins" timestamp="1592032031941">
@@ -277,38 +280,39 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591783345341" />
-    <state x="421" y="0" key="CommitChangelistDialog2" timestamp="1591969210544">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="460" y="0" key="CommitChangelistDialog2" timestamp="1592134026625">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="421" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1591969210544" />
+    <state x="421" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1591962779668" />
+    <state x="460" y="0" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1592134026625" />
     <state x="421" y="0" key="CommitChangelistDialog2/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591886328029" />
     <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1591864416858">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="154" key="FileChooserDialogImpl/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591864416858" />
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1592032231685">
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1592923063955">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591962802067" />
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1592032231685" />
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1592923063955" />
     <state width="1493" height="223" key="GridCell.Tab.0.bottom/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591907192429" />
-    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1592032231684">
+    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1592923063954">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591962802066" />
-    <state width="1638" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1592032231684" />
+    <state width="1638" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1592923063954" />
     <state width="1493" height="223" key="GridCell.Tab.0.center/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591907192428" />
-    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1592032231683">
+    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1592923063953">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591962802066" />
-    <state width="1638" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1592032231683" />
+    <state width="1638" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1592923063953" />
     <state width="1493" height="223" key="GridCell.Tab.0.left/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591907192428" />
-    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1592032231685">
+    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1592923063954">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591962802066" />
-    <state width="1638" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1592032231685" />
+    <state width="1638" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1592923063954" />
     <state width="1493" height="223" key="GridCell.Tab.0.right/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591907192429" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1591962802060">
       <screen x="0" y="0" width="1536" height="824" />
@@ -339,10 +343,11 @@
     </state>
     <state x="249" y="0" key="SettingsEditor/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591864417840" />
     <state x="2169" y="0" key="SettingsEditor/1920.0.1536.824/0.0.1536.824@1920.0.1536.824" timestamp="1591797383241" />
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1591969213514">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="395" y="168" key="Vcs.Push.Dialog.v2" timestamp="1592134029238">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591969213514" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591962782046" />
+    <state x="395" y="168" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1592134029238" />
     <state x="361" y="132" key="Vcs.Push.Dialog.v2/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591886330234" />
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1591864009565">
       <screen x="0" y="0" width="1536" height="824" />

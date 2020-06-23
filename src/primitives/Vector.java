@@ -3,7 +3,8 @@ package primitives;
 import java.util.Objects;
 
 /**
- * Vector class represent a vector in the space, the vector contain Head point.
+ * Vector class represent a vector in the space, the vector contain Head point - the end of the vector.
+ * end the beginning of the vector is the point (0,0,0) "RESHIT AHTZIRIM".
  */
 public class Vector {
 

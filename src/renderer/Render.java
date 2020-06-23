@@ -4,13 +4,11 @@ import elements.LightSource;
 import geometries.Geometries;
 import geometries.Intersectable;
 import primitives.*;
+import primitives.Vector;
 import scene.Scene;
 import elements.Camera;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 import geometries.Intersectable.GeoPoint;
 import static geometries.Intersectable.GeoPoint;
@@ -21,7 +19,7 @@ import static primitives.Util.isZero;
 
 /***
  * class Render, responsible to take all the calculation of ray intersections
- * and light, and to create a picture from that.
+ * and light, and to create view plane matrix that represent the picture from it.
  */
 
 public class Render {
@@ -68,16 +66,59 @@ public class Render {
        //pixels grid
        for (int row = 0; row < Ny; ++row) {
            for (int column = 0; column < Nx; ++column) {
-               Ray ray = camera.constructRayThroughPixel(Nx, Ny, column, row, distance, width, height);
-               GeoPoint closestPoint = findCLosestIntersection(ray);
-               if (closestPoint == null) {
-                   imageWriter.writePixel(column, row, background);
-               } else {
-                   imageWriter.writePixel(column, row, calcColor(closestPoint, ray).getColor());
+
+               // receive boundary and center rays in the current pixel.
+               LinkedList<Ray> boundaryRays = camera.constructBoundingRaysThroughPixel(Nx, Ny, column, row, distance, width, height);
+
+               LinkedList<Color> colors = new LinkedList<Color>();
+
+               // get color of boundary rays of the pixel
+               for (int i = 0; i < boundaryRays.size(); i++){
+                   colors.add(getColorIntersection(boundaryRays.get(i)));
+               }
+               if (!IsDifferentColors(colors)){ // if the ray corners are the same color.
+                   imageWriter.writePixel(column, row, getColorIntersection(boundaryRays.get(0)).getColor());
+               }
+               else{ // average colors from all rays
+                   LinkedList<Ray> rays = camera.constructRaysThroughPixel(Nx, Ny, column, row, distance, width, height);
+                   Color color = new Color(Color.BLACK);
+                   for (Ray ray: rays){
+                       color = color.add(getColorIntersection(ray));
+                   }
+                   color = color.reduce(rays.size());
+                   imageWriter.writePixel(column, row, color.getColor());
                }
            }
        }
    }
+
+    /***
+     * function to check if all the colors in the corners and in the center of the pixel are equal or different.
+     * @param colors receive corners and center colors
+     * @return equals or not
+     */
+    private boolean IsDifferentColors(LinkedList<Color> colors){
+        for (int i = 1; i < colors.size(); i++){
+            if (!colors.get(i).getColor().equals(colors.get(0).getColor()))
+                return false;
+        }
+        return true;
+    }
+
+    /***
+     * function to evaluate the color of the intersection of the ray with geoPoint.
+     * @param ray given ray
+     * @return the intersection color
+     */
+    private Color getColorIntersection(Ray ray){
+        GeoPoint closestPoint = findCLosestIntersection(ray);
+        if (closestPoint == null) {
+            return scene.get_background();
+        } else {
+            return calcColor(closestPoint, ray);
+        }
+    }
+
 
     /***
      * function to calculate the color for the closes point to the ray

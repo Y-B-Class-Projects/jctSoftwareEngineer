@@ -9,7 +9,7 @@ import static java.lang.System.out;
 import static primitives.Util.alignZero;
 
 /**
- * Sphere class represent a Sphere in the space by center point and radius
+ * Sphere class represent a Sphere in the space by center point and radius - כדור
  */
 public class Sphere extends RadialGeometry {
 
