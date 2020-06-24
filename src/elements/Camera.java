@@ -98,12 +98,12 @@ public class Camera {
         double Rx = screenWith/nX;
 
         // range of random for x
-        double Xmin = j * Rx;
-        double Xmax = (j+1) * Rx;
+        double Xmin = j * Rx - nX/2.0*Rx;
+        double Xmax = (j+1) * Rx - nX/2.0*Rx;
 
         // range of random for y
-        double Ymin = i * Ry;
-        double Ymax = (i+1) * Ry;
+        double Ymin = i * Ry - nY/2.0*Ry;
+        double Ymax = (i+1) * Ry - nY/2.0*Ry;
 
 
         LinkedList<Ray> ret = new LinkedList<Ray>();
@@ -140,10 +140,11 @@ public class Camera {
         double Rx = screenWith/nX;
 
         // range of random for x and y
-        double Xmin = j * Rx;
-        double Xmax = (j+1) * Rx;
-        double Ymin = i * Ry;
-        double Ymax = (i+1) * Ry;
+        // range of random for x
+        double Xmin = j * Rx - nX/2.0*Rx;
+        double Xmax = (j+1) * Rx - nX/2.0*Rx;
+        double Ymin = i * Ry - nY/2.0*Ry;
+        double Ymax = (i+1) * Ry - nY/2.0*Ry;
 
         LinkedList<Ray> rays = new LinkedList<Ray>();
         // center of pixel

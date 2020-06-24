@@ -79,7 +79,8 @@ public class Render {
                if (!IsDifferentColors(colors)){ // if the ray corners are the same color.
                    imageWriter.writePixel(column, row, getColorIntersection(boundaryRays.get(0)).getColor());
                }
-               else{ // average colors from all rays
+               else
+               { // average colors from all rays
                    LinkedList<Ray> rays = camera.constructRaysThroughPixel(Nx, Ny, column, row, distance, width, height);
                    Color color = new Color(Color.BLACK);
                    for (Ray ray: rays){
@@ -100,9 +101,9 @@ public class Render {
     private boolean IsDifferentColors(LinkedList<Color> colors){
         for (int i = 1; i < colors.size(); i++){
             if (!colors.get(i).getColor().equals(colors.get(0).getColor()))
-                return false;
+                return true;
         }
-        return true;
+        return false;
     }
 
     /***
