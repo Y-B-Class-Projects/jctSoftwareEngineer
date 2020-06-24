@@ -12,6 +12,11 @@ import primitives.Vector;
 
 public interface LightSource {
 
+    /***
+     * function to return the radius of the light source object.
+     * @return radius
+     */
+    double getRaduis();
     /**
      * return the distance from the LightSource to the point
      * @param point point for distance calculation

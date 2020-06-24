@@ -29,6 +29,21 @@ public class spotLight extends pointLight {
         this._direction = new Vector(_direction).normalized();
     }
 
+    /***
+     * constructor for initialize the class spot light, adding the property radius
+     * @param _intensity the color of the light
+     * @param _position same as the super
+     * @param _kC same as the super
+     * @param _kl same as the super
+     * @param _kQ same as the super
+     * @param _radius radius of the source light
+     * @param _direction the direction of the point light
+     */
+    public spotLight(Color _intensity, Point3D _position, double _kC, double _kl, double _kQ, double _radius, Vector _direction) {
+        super(_intensity, _position, _kC, _kl, _kQ, _radius);
+        this._direction = new Vector(_direction).normalized();
+    }
+
     @Override
     public Color getIntensity(Point3D p) {
         Vector l = getL(p);

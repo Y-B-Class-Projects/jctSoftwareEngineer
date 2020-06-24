@@ -15,9 +15,24 @@ import static java.lang.System.out;
 public class pointLight extends Light implements LightSource {
 
     protected Point3D _position;
-    protected double _kC, _kl, _kQ;
+    protected double _kC, _kl, _kQ, _radius;
 
 /***********     constructor   *************/
+
+    /***
+     * constructor to initialize the fields
+     * @param _intensity color of the light source
+     * @param _position position of the source light in the space
+     * @param _kC constant factor for attenuation
+     * @param _kl linear factor for attenuation
+     * @param _kQ qatar(חזקה) factor for attenuation
+     * @param _radius radius that represent the size of the light source object.
+     */
+    public pointLight(Color _intensity, Point3D _position, double _kC, double _kl, double _kQ, double _radius) {
+        this(_intensity,_position,_kC,_kl,_kQ);
+        this._radius = _radius;
+    }
+
     /***
      * constructor to initialize the fields
      * @param _position position of the source light in the space
@@ -31,6 +46,12 @@ public class pointLight extends Light implements LightSource {
         this._kC = _kC;
         this._kl = _kl;
         this._kQ = _kQ;
+        _radius = 0;
+    }
+
+    @Override
+    public double getRaduis() {
+        return _radius;
     }
 
     @Override

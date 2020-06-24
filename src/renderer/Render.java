@@ -8,6 +8,7 @@ import primitives.Vector;
 import scene.Scene;
 import elements.Camera;
 
+import java.time.temporal.ValueRange;
 import java.util.*;
 
 import geometries.Intersectable.GeoPoint;
@@ -168,9 +169,11 @@ public class Render {
         for (LightSource lightSource : scene.get_lights()) {
             Vector l = lightSource.getL(gp.point);
             if (signum(n.dotProduct(l)) == signum(n.dotProduct(v)) && n.dotProduct(l)*n.dotProduct(v) > 0) {
-                double ktr = transparency(lightSource, l, n, gp);
-                if (ktr * k > MIN_CALC_COLOR_K) {
-                    if (unshaded(lightSource, l, n, gp)) {
+                if (unshaded(lightSource, l, n, gp)) { // return true if there is'nt ABSOLUTELY shadow
+
+                    double ktr = transparency(lightSource, l, n, gp);
+
+                    if (ktr * k > MIN_CALC_COLOR_K) {
                         Color lightIntensity = lightSource.getIntensity(gp.point).scale(ktr);
                         color = color.add(calcDiffusive(kd, l, n, lightIntensity), calcSpecular(ks, l, n, v, nShininess, lightIntensity));
                     }
@@ -199,8 +202,18 @@ public class Render {
         }
         return color;
     }
-
-
+    /***
+     * function to check if the color are different on the list
+     * @param boundaryKtr list of boundary values
+     * @return true if the value are different
+     */
+    private boolean IsKtrBoundaryDifferent(LinkedList<Double> boundaryKtr){
+        for (int i = 1; i < boundaryKtr.size(); i++){
+            if (boundaryKtr.get(i) != boundaryKtr.get(0))
+                return true;
+        }
+        return false;
+    }
     /**
      * function to evaluate the diffusive factor of the light, according to "Phong model"
      * the diffusive factor represent the light reflected from the object to everywhere
@@ -292,7 +305,7 @@ public class Render {
      * @param l vector to the object from the camera through the "glass"
      * @param n normal to the object.
      * @param geopoint point on the object.
-     * @return if there is a shadow or not.
+     * @return if there is any ABSOLUTELY shadow return false, otherwise return true.
      */
     private boolean unshaded(LightSource light, Vector l, Vector n, GeoPoint geopoint) {
         Vector lightDirection = l.scale(-1); // from point to light source
@@ -313,7 +326,21 @@ public class Render {
     }
 
     /***
-     * function to evaluate the factor of the all the reflection on the object,
+     * function to evaluate the factor of the boundary values of the light source
+     * @param ls the light through the "glass"
+     * @param l vector of the light
+     * @param n normal to the object
+     * @param geopoint point on the object
+     * @return list that contain the boundary values
+     */
+    private LinkedList<Double> boundaryTransparency(LightSource ls, Vector l, Vector n, GeoPoint geopoint){
+        Vector lightDirection = l.scale(-1); // from point to light source
+
+        LinkedList<Ray> lightRays = new LinkedList<Ray>();
+
+    }
+    /***
+     * function to evaluate the factor of all the reflection on the object,
      * we take all the glasses that the original ray move through it and evaluate
      * the effect on the pixel.
      * @param ls the light through the "glass"
@@ -325,10 +352,83 @@ public class Render {
     private double transparency(LightSource ls, Vector l, Vector n, GeoPoint geopoint) {
         Vector lightDirection = l.scale(-1); // from point to light source
 
-        Ray lightRay = new Ray(geopoint.point, lightDirection, n);
+        LinkedList<Ray> lightRays = new LinkedList<Ray>();
 
-        List<GeoPoint> intersections = scene.get_geometries().findIntsersections(lightRay);
+        if (ls.getRaduis() != 0){ //
+            // initialize cartesian axis inside the light source (x,y)
+            Vector x  = new Vector(-lightDirection.get_head().get_z().get_coord(),0,lightDirection.get_head().get_x().get_coord()).normalized();
+            Vector y = new Vector(x.crossProduct(lightDirection)).normalized();
 
+            // first check if we need to create group of N rays, if not don't create
+            LinkedList<Ray> boundaryRays = boundaryTransparency(ls, l, n, geopoint, x, y); // receive boundary's value
+            LinkedList<Double> boundaryKtr =
+            if (!IsKtrBoundaryDifferent(boundaryRays.)) {
+                lightRays.add(boundaryRays.get(0));
+            }
+            else {
+                ktr = transparencyMultipleRays(ls, l, n, geopoint, x, y); // ktr = factor of light transparency to the GeoPoint.(average of the group)
+            }
+
+            return ktr;
+            // create group of rays
+            for (int i = 0; i < 50; i++) {
+
+                Random rand = new Random();
+                double cos = -1 + 2 * rand.nextDouble(); // rand(-1,1)
+                double sin = Math.sqrt(1 - Math.pow(cos, 2)); // sin^2 + cos^2 = 1
+                double d = -ls.getRaduis() + 2 * ls.getRaduis() * rand.nextDouble(); // rand(-r,r)
+
+                // the point in the light source 2D space
+                double _x = cos * d; // x coordinate
+                double _y = sin * d; // y coordinate
+
+                double distance = ls.getDistance(geopoint.point); // distance from GeoPoint to the light source
+                Point3D pCenter = geopoint.point.add(lightDirection.scale(distance)); // center of the light source
+
+                // pIJ = pCenter + x * _x + y * _y
+                Point3D pIJ = pCenter;
+                if (_x != 0) pIJ = pIJ.add(x.scale(_x));
+                if (_y != 0) pIJ = pIJ.add(y.scale(_y));
+
+                // add ray to the list of rays
+                lightRays.add(new Ray(geopoint.point, new Vector(pIJ.subtruct(geopoint.point)).normalized(),n));
+            }
+
+        }
+        else
+        {
+            lightRays.add(new Ray(geopoint.point, lightDirection, n));
+        }
+
+        // calculate the average of the group rays
+        ArrayList<GeoPoint> intersections;
+        double sumOfKtr = 0;
+        for (Ray ray: lightRays){
+            intersections = scene.get_geometries().findIntsersections(ray); // all the intersection of specific ray with GeoPoints
+            sumOfKtr += getKtr(intersections,ls, geopoint);
+        }
+        //////////////////
+        // first check if we need to create group of N rays, if not don't create
+        LinkedList<Double> boundaryKtr = boundaryTransparency(lightSource, l, n, gp); // receive boundary's value
+        double ktr;
+        if (!IsKtrBoundaryDifferent(boundaryKtr)) {
+            ktr = boundaryKtr.get(0);
+        }
+        else {
+            ktr = transparency(lightSource, l, n, gp); // ktr = factor of light transparency to the GeoPoint.(average of the group)
+        }
+        //////////////////
+       return sumOfKtr / lightRays.size();
+    }
+
+    /***
+     *  function to evaluate the ktr, with given information about the intersection.
+     * @param intersections list of intersection
+     * @param ls the light source
+     * @param geopoint point on the geometries
+     * @return ktr
+     */
+    private double getKtr(ArrayList<GeoPoint> intersections, LightSource ls, GeoPoint geopoint){
         if (intersections == null) return 1.0;
 
         double lightDistance = ls.getDistance(geopoint.point);
@@ -342,7 +442,6 @@ public class Render {
         }
         return ktr;
     }
-
     /***
      * function to evaluate the "Refracted Ray" - the ray that goes into the object,
      * and move a little bit. (for example: straw inside glass of water)
