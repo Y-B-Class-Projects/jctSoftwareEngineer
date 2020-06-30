@@ -41,7 +41,7 @@ public class ReflectionRefractionTests {
 				new Sphere(new Color(java.awt.Color.RED), new Material(0.5, 0.5, 100), 25, new Point3D(0, 0, 50)));
 
 		scene.addLights(new spotLight(new Color(1000, 600, 0), new Point3D(-100, 100, -500), new Vector(-1, 1, 2), 1,
-				0.0004, 0.0000006));
+				0.0004, 0.0000006, 10));
 
 		ImageWriter imageWriter = new ImageWriter("twoSpheres", 150, 150, 500, 500);
 		Render render = new Render(imageWriter, scene);
@@ -70,7 +70,7 @@ public class ReflectionRefractionTests {
 						new Point3D(-1500, -1500, 1500), new Point3D(-1500, 1500, 2000)));
 
 		scene.addLights(new spotLight(new Color(1020, 400, 400),  new Point3D(-750, 750, 150),
-				new Vector(-1, 1, 4), 1, 0.00001, 0.000005));
+				new Vector(-1, 1, 4), 1, 0.00001, 0.000005, 10));
 
 		ImageWriter imageWriter = new ImageWriter("twoSpheresMirrored", 2500, 2500, 500, 500);
 		Render render = new Render(imageWriter, scene);
@@ -100,10 +100,11 @@ public class ReflectionRefractionTests {
 						30, new Point3D(60, -50, 50)));
 
 		scene.addLights(new spotLight(new Color(700, 400, 400), //
-				new Point3D(60, -50, 0), new Vector(0, 0, 1), 1, 4E-5, 2E-7));
+				new Point3D(60, -50, 0), new Vector(0, 0, 1), 1, 4E-5, 2E-7 , 10));
 
 		ImageWriter imageWriter = new ImageWriter("shadow with transparency", 200, 200, 600, 600);
-		Render render = new Render(imageWriter, scene);
+
+		Render render = new Render(imageWriter, scene).setMultithreading(3).setDebugPrint();
 
 		render.renderImage();
 		render.writeToImage();
@@ -139,4 +140,31 @@ public class ReflectionRefractionTests {
 		render.renderImage();
 		render.writeToImage();
 	}
+	@Test
+	public void trianglesTransparentSphereBlack() {
+		Scene scene = new Scene("Test scene");
+		scene.setCamera(new Camera(new Point3D(0, 0, -1000), new Vector(0, 0, 1), new Vector(0, -1, 0)));
+		scene.setDistance(1000);
+		scene.setBackground(Color.BLACK);
+		scene.setAmbientLight(new AmbientLight(new Color(java.awt.Color.WHITE), 0.15));
+
+		scene.addGeometries( //
+				new Triangle(Color.BLACK, new Material(0.5, 0.5, 60), //
+						new Point3D(-150, 150, 115), new Point3D(150, 150, 135), new Point3D(75, -75, 150)), //
+				new Triangle(Color.BLACK, new Material(0.5, 0.5, 60), //
+						new Point3D(-150, 150, 115), new Point3D(-70, -70, 140), new Point3D(75, -75, 150)), //
+				new Sphere(new Color(java.awt.Color.DARK_GRAY), new Material(0.2, 0.2, 30, 0, 0), // )
+						30, new Point3D(60, -50, 50)));
+
+		scene.addLights(new spotLight(new Color(java.awt.Color.white), //
+				new Point3D(60, -50, 5), new Vector(0, 0, 1), 1, 4E-5, 2E-7 , 20));
+
+		ImageWriter imageWriter = new ImageWriter("shadow with transparency Black", 200, 200, 600, 600);
+
+		Render render = new Render(imageWriter, scene).setMultithreading(3).setDebugPrint();
+
+		render.renderImage();
+		render.writeToImage();
+	}
+
 }

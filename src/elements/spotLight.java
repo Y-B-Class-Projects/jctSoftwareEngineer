@@ -39,7 +39,7 @@ public class spotLight extends pointLight {
      * @param _radius radius of the source light
      * @param _direction the direction of the point light
      */
-    public spotLight(Color _intensity, Point3D _position, double _kC, double _kl, double _kQ, double _radius, Vector _direction) {
+    public spotLight(Color _intensity, Point3D _position,Vector _direction, double _kC, double _kl, double _kQ,  double _radius) {
         super(_intensity, _position, _kC, _kl, _kQ, _radius);
         this._direction = new Vector(_direction).normalized();
     }
