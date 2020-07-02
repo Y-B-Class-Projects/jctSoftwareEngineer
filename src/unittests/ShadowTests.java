@@ -35,7 +35,7 @@ public class ShadowTests {
 				new Point3D(-100, 100, -200), new Vector(1, -1, 3), 1, 1E-5, 1.5E-7, 20));
 
 		ImageWriter imageWriter = new ImageWriter("sphereTriangleInitial", 200, 200, 400, 400);
-		Render render = new Render(imageWriter, scene);
+		Render render = new Render(imageWriter, scene).setMultithreading(3).setDebugPrint();
 
 		render.renderImage();
 		render.writeToImage();
@@ -61,7 +61,7 @@ public class ShadowTests {
 				new Point3D(-100, 100, -200), new Vector(1, -1, 3), 1, 1E-5, 1.5E-7, 20));
 
 		ImageWriter imageWriter = new ImageWriter("sphereTriangleMove1", 200, 200, 400, 400);
-		Render render = new Render(imageWriter, scene);
+		Render render = new Render(imageWriter, scene).setMultithreading(3).setDebugPrint();
 
 		render.renderImage();
 		render.writeToImage();
@@ -87,7 +87,7 @@ public class ShadowTests {
 				new Point3D(-100, 100, -200), new Vector(1, -1, 3), 1, 1E-5, 1.5E-7, 20));
 
 		ImageWriter imageWriter = new ImageWriter("sphereTriangleMove2", 200, 200, 400, 400);
-		Render render = new Render(imageWriter, scene);
+		Render render = new Render(imageWriter, scene).setMultithreading(3).setDebugPrint();
 
 		render.renderImage();
 		render.writeToImage();
@@ -113,7 +113,7 @@ public class ShadowTests {
 				new Point3D(-100, 100, -200).add(new Vector(1,-1,3).scale(10)), new Vector(1, -1, 3), 1, 1E-5, 1.5E-7, 20));
 
 		ImageWriter imageWriter = new ImageWriter("sphereTriangleSpot1", 200, 200, 400, 400);
-		Render render = new Render(imageWriter, scene);
+		Render render = new Render(imageWriter, scene).setMultithreading(3).setDebugPrint();
 
 		render.renderImage();
 		render.writeToImage();
@@ -139,7 +139,7 @@ public class ShadowTests {
 				new Point3D(-100, 100, -200).add(new Vector(1,-1,5).scale(25)), new Vector(1, -1, 3), 1, 1E-5, 1.5E-7, 20));
 
 		ImageWriter imageWriter = new ImageWriter("sphereTriangleSpot2", 200, 200, 400, 400);
-		Render render = new Render(imageWriter, scene);
+		Render render = new Render(imageWriter, scene).setMultithreading(3).setDebugPrint();
 
 		render.renderImage();
 		render.writeToImage();

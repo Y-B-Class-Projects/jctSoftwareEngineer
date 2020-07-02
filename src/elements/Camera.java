@@ -1,10 +1,7 @@
 package elements;
 
 import org.junit.jupiter.api.Test;
-import primitives.Color;
-import primitives.Point3D;
-import primitives.Ray;
-import primitives.Vector;
+import primitives.*;
 
 import java.util.LinkedList;
 import java.util.Random;
@@ -31,7 +28,7 @@ public class Camera {
      * @param v_to forward vector from the eye of the camera
      */
     public Camera(Point3D placeable,  Vector v_to , Vector v_up){
-        if (v_to.dotProduct(v_up) != 0)
+        if (!Util.isZero(v_to.dotProduct(v_up)))
             throw new IllegalArgumentException("not normalized vectors");
         v_to.normalized();
         v_up.normalized();
