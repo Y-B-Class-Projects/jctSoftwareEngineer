@@ -2,7 +2,7 @@ package elements;
 
 import org.junit.jupiter.api.Test;
 import primitives.*;
-
+import primitives.Util;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -29,7 +29,7 @@ public class Camera {
      */
     public Camera(Point3D placeable,  Vector v_to , Vector v_up){
         if (!Util.isZero(v_to.dotProduct(v_up)))
-            throw new IllegalArgumentException("not normalized vectors");
+            throw new IllegalArgumentException("not orthogonals vectors");
         v_to.normalized();
         v_up.normalized();
         this.placeable = new Point3D(placeable);
@@ -73,6 +73,8 @@ public class Camera {
     }
 
 /************   functions   ****************/
+
+/***************   old function only for the test's   **********************/
 
     /***
      * build rays from camera through view plane (in specific pixel) to the objects
@@ -155,21 +157,6 @@ public class Camera {
     }
 
     /***
-     * function to build ray inside specific place in specific pixel.
-     * @param x x coordinate inside pixel. (not the original coordinate)
-     * @param y y coordinate inside pixel. (not the original coordinate)
-     * @param pCenter the center of the view plane
-     * @return build ray
-     */
-    private Ray createRayTroughViewPlane(double x, double y, Point3D pCenter){
-        if (x != 0) pCenter = pCenter.add(v_right.scale(x));
-        if (y != 0) pCenter = pCenter.add(v_up.scale(-y));
-        Vector vIJ = pCenter.subtruct(placeable).normalized();
-        return new Ray(placeable, vIJ);
-    }
-/***************   old function only for the test's   **********************/
-
-    /***
      * build rays from camera through view plane (in specific pixel) to the objects
      * (NOTE: this function not calculating the intersections with the geometries objects)
      * @param nX with of pixel
@@ -193,11 +180,8 @@ public class Camera {
         double Ymin = i * Ry;
         double Ymax = (i+1) * Ry;
 
-
         //image center
         Point3D pCenter = placeable.add(v_to.scale(screenDistance));
-
-
 
         double xJ = (j - nX/2.0) * Rx + (Rx/2.0);
         double yI = (i - nY/2.0) * Ry + Ry/2.0;
@@ -210,5 +194,63 @@ public class Camera {
 
         return new Ray(placeable , vIJ);
 
+    }
+/*************************    ************************************/
+    /***
+     * the function receive information about pixel and pixel component, and send 4 rays at the corners of the
+     * component
+     *  @param nX with of pixel
+     *  @param nY height of pixel
+     *  @param j column index in the view plane
+     *  @param i row index in the view plane
+     *  @param screenDistance distance of pixel from camera eye
+     *  @param screenWith size of view plane with
+     *  @param screenHeight size of view plane height
+     * @param Xstart percent of the begging of X component
+     * @param Xend percent of the end of X component
+     * @param Ystart percent of the begging of Y component
+     * @param Yend percent of the end of Y component
+     * @return list of 4 boundary rays, construct the pixel component, in the corners.
+     */
+    public  LinkedList<Ray> ConstructRayThroughPixelComponent(int nX, int nY, int j, int i, double screenDistance, double screenWith, double screenHeight,
+                                                                double Xstart, double Xend, double Ystart, double Yend){
+        //view plane center
+        Point3D pCenter = placeable.add(v_to.scale(screenDistance));
+
+        // Ratio (Pixel with & height)
+        double Ry = screenHeight/nY;
+        double Rx = screenWith/nX;
+
+        // coordinate for x in the pixel component
+        double XminComponent = (j - nX/2.0)*Rx + Xstart*Rx;
+        double XmaxComponent = (j - nX/2.0)*Rx + Xend*Rx;
+
+        // coordinate for y in the pixel component
+        double YminComponent = (i - nY/2.0)*Ry + Ystart*Ry;
+        double YmaxComponent = (i - nY/2.0)*Ry + Yend*Ry;
+
+        LinkedList<Ray> ret = new LinkedList<Ray>();
+
+        // create ray through corner point of pixel component, at the view plane
+        ret.add(createRayTroughViewPlane(XminComponent, YminComponent, pCenter));
+        ret.add(createRayTroughViewPlane(XminComponent, YmaxComponent, pCenter));
+        ret.add(createRayTroughViewPlane(XmaxComponent, YminComponent, pCenter));
+        ret.add(createRayTroughViewPlane(XmaxComponent, YmaxComponent, pCenter));
+
+        return ret;
+    }
+
+    /***
+     * function to build ray inside specific place in specific pixel.
+     * @param x x coordinate inside pixel. (not the original coordinate)
+     * @param y y coordinate inside pixel. (not the original coordinate)
+     * @param pCenter the center of the view plane
+     * @return build ray
+     */
+    private Ray createRayTroughViewPlane(double x, double y, Point3D pCenter){
+        if (x != 0) pCenter = pCenter.add(v_right.scale(x));
+        if (y != 0) pCenter = pCenter.add(v_up.scale(-y));
+        Vector vIJ = pCenter.subtruct(placeable).normalized();
+        return new Ray(placeable, vIJ);
     }
 }
