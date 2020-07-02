@@ -48,7 +48,7 @@ public class Ray {
      * @param n vector normal to the direction and to the object.
      */
     public Ray(Point3D head, Vector direction, Vector n){
-        _dir = new Vector(direction).normalized();
+        _dir = direction.normalized();
 
         double nv = n.dotProduct(direction);
 
@@ -63,7 +63,7 @@ public class Ray {
      * @return coordinate-x value
      */
     public Point3D get_p0() {
-        return new Point3D(_p0);
+        return _p0;
     }
 
     /**
@@ -71,7 +71,7 @@ public class Ray {
      * @return direction value
      */
     public Vector get_dir() {
-        return new Vector(_dir);
+        return _dir;
     }
 
     /***

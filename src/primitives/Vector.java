@@ -20,7 +20,7 @@ public class Vector {
     public Vector(Point3D _head) {
         if (_head.equals(Point3D.ZERO))
             throw new IllegalArgumentException("ZERO VECTOR NOT ALLOWED");
-        this._head = new Point3D(_head);
+        this._head = _head;
     }
 
     /**
@@ -28,7 +28,7 @@ public class Vector {
      * @param vector Vector to copy to the object.
      */
     public Vector(Vector vector) {
-        this._head = vector.get_head();
+        this._head = vector._head;
     }
 
     /**
@@ -58,7 +58,7 @@ public class Vector {
      * @return head-value value
      */
     public Point3D get_head() {
-        return new Point3D(_head);
+        return _head ;
     }
 
 /******   ToString   **********/
@@ -97,9 +97,9 @@ public class Vector {
      * @return result of the Addition
      */
     public Vector add(Vector vec) {
-        return new Vector(this.get_head().get_x().get_coord() + vec.get_head().get_x().get_coord(),
-                          this.get_head().get_Y().get_coord() + vec.get_head().get_Y().get_coord(),
-                          this.get_head().get_z().get_coord() + vec.get_head().get_z().get_coord());
+        return new Vector(_head._x._coord + vec._head._x._coord,
+                          _head._y._coord + vec._head._y._coord,
+                       _head._z._coord + vec._head._z._coord);
     }
 
     /**
@@ -108,9 +108,9 @@ public class Vector {
      * @return result of the subtraction
      */
     public Vector subtruct(Vector vec) {
-        return new Vector(this.get_head().get_x().get_coord() - vec.get_head().get_x().get_coord(),
-                          this.get_head().get_Y().get_coord() - vec.get_head().get_Y().get_coord(),
-                          this.get_head().get_z().get_coord() - vec.get_head().get_z().get_coord());
+        return new Vector(_head._x._coord - vec._head._x._coord,
+                _head._y._coord - vec._head._y._coord,
+                _head._z._coord - vec._head._z._coord);
     }
 
     /**
@@ -119,9 +119,9 @@ public class Vector {
      * @return result of the scalar multiplication
      */
     public Vector scale(double scalar) {
-        Point3D point3D= new Point3D(this._head.get_x().get_coord() * scalar,
-                          this._head.get_Y().get_coord() * scalar,
-                          this._head.get_z().get_coord() * scalar);
+        Point3D point3D= new Point3D(_head._x._coord * scalar,
+                _head._y._coord * scalar,
+                _head._z._coord * scalar);
         return new Vector(point3D);
     }
 
@@ -131,9 +131,9 @@ public class Vector {
      * @return result of the Dot-Product.
      */
     public double dotProduct(Vector vec) {
-        return this.get_head().get_x().get_coord() * vec.get_head().get_x().get_coord() +
-               this.get_head().get_Y().get_coord() * vec.get_head().get_Y().get_coord() +
-               this.get_head().get_z().get_coord() * vec.get_head().get_z().get_coord();
+        return _head._x._coord * vec._head._x._coord +
+                _head._y._coord * vec._head._y._coord +
+                _head._z._coord * vec._head._z._coord;
     }
 
     /**
@@ -142,9 +142,9 @@ public class Vector {
      * @return result of the cross-product.
      */
     public Vector crossProduct(Vector vec) {
-        return new Vector(this._head.get_Y().get_coord() * vec.get_head().get_z().get_coord() - this.get_head().get_z().get_coord() * vec.get_head().get_Y().get_coord(),
-                          this._head.get_z().get_coord() * vec.get_head().get_x().get_coord() - this.get_head().get_x().get_coord() * vec.get_head().get_z().get_coord(),
-                          this._head.get_x().get_coord() * vec.get_head().get_Y().get_coord() - this.get_head().get_Y().get_coord() * vec.get_head().get_x().get_coord());
+        return new Vector(_head._y._coord * vec._head._z._coord -_head._z._coord * vec._head._y._coord,
+                          _head._z._coord * vec._head._x._coord -_head._x._coord * vec._head._z._coord,
+                          _head._x._coord * vec._head._y._coord -_head._y._coord * vec._head._x._coord);
     }
 
     /**
@@ -169,9 +169,9 @@ public class Vector {
      */
     public Vector normalize() {
         double length = length();     // this.length()
-        this._head = new Point3D(this.get_head().get_x().get_coord() / length,
-                                 this.get_head().get_Y().get_coord() / length,
-                                 this.get_head().get_z().get_coord() / length);
+        this._head = new Point3D(_head._x._coord / length,
+                _head._y._coord  / length,
+                _head._z._coord  / length);
         return this;
     }
 

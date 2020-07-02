@@ -37,6 +37,7 @@ public class finalTest {
         scene.addGeometries(new Triangle(new Color(java.awt.Color.black),WallMaterial , A,B,C));
         scene.addGeometries(new Triangle(new Color(java.awt.Color.black),WallMaterial, A,C,D));
 
+        //שמאל
         scene.addGeometries(new Triangle(new Color(java.awt.Color.black),WallMaterial ,E,A,B));
         scene.addGeometries(new Triangle(new Color(java.awt.Color.black),WallMaterial, F, A,E));
 
@@ -86,7 +87,7 @@ public class finalTest {
         scene.addGeometries(new Sphere(new Color(java.awt.Color.blue), new Material(0.5, 0.5, 60, 0, 0) , new Point3D(Tr2_3) , 5));
 
         //scene.addLights(new DirectionalLight(new Color(300, 150, 150) , new Vector(0,-1,-1)));
-        //scene.addLights(new pointLight(new Color(250, 250, 250), new Point3D(50, -80, 50),1, 0.0005, 0.0005 ,0));
+        scene.addLights(new pointLight(new Color(250, 250, 250), new Point3D(0, -90, 0),1, 0.0005, 0.0005 ,0));
         scene.addLights(new spotLight(new Color(300, 300, 300), new Point3D(0, 100, -250), new Vector(0,-55,250).normalized() ,1, 0.000001, 0.00001 , 0));
 
 

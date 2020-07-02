@@ -10,11 +10,11 @@ import java.util.Objects;
 public class Point3D {
 
     /** coordinates in the x axis */
-    private Coordinate _x;
+    public Coordinate _x;
     /** coordinates in the y axis */
-    private Coordinate _y;
+    public Coordinate _y;
     /** coordinates in the z axis */
-    private Coordinate _z;
+    public Coordinate _z;
 
     /** zero coordinates (0,0,0) */
     public static final Point3D ZERO = new Point3D(new Coordinate(0.0), new Coordinate(0.0), new Coordinate(0.0));
@@ -50,9 +50,9 @@ public class Point3D {
      * @param p Point to copy to the object.
      */
     public Point3D(Point3D p) {
-        this._x = p.get_x();
-        this._y = p.get_Y();
-        this._z = p.get_z();
+        this._x = p._x;
+        this._y = p._y;
+        this._z = p._z;
     }
 
 
@@ -64,7 +64,7 @@ public class Point3D {
      * @return coordinate-x value
      */
     public Coordinate get_x() {
-        return new Coordinate(_x);
+        return _x;
     }
 
     /**
@@ -73,7 +73,7 @@ public class Point3D {
      * @return coordinate-y value
      */
     public Coordinate get_Y() {
-        return new Coordinate(_y);
+        return  _y;
     }
 
     /**
@@ -82,7 +82,7 @@ public class Point3D {
      * @return coordinate-z value
      */
     public Coordinate get_z() {
-        return new Coordinate(_z);
+        return _z;
     }
 
     /******************  equals() and ToString() *********************/
@@ -123,7 +123,7 @@ public class Point3D {
      * p2 direction)
      */
     public Vector subtruct(Point3D p2){
-        return new Vector(new Point3D(this._x.get_coord() - p2._x.get_coord(), this._y.get_coord() - p2._y.get_coord(), this._z.get_coord() - p2._z.get_coord()));
+        return new Vector(new Point3D(_x._coord - p2._x._coord, _y._coord - p2._y._coord, _z._coord - p2._z._coord));
     }
 
     /**
@@ -133,9 +133,9 @@ public class Point3D {
      * the size of vector length)
      */
     public Point3D add(Vector vec){
-        return new Point3D(this._x.get_coord() + vec.get_head().get_x().get_coord(),
-                this._y.get_coord() + vec.get_head().get_Y().get_coord(),
-                this._z.get_coord() + vec.get_head().get_z().get_coord());
+        return new Point3D(_x._coord + vec.get_head()._x._coord,
+                _y._coord + vec.get_head()._y._coord,
+                _z._coord + vec.get_head()._z._coord);
     }
 
 
@@ -145,9 +145,9 @@ public class Point3D {
      * @return Square Distance between the object and the received point3D
      */
     public double distanceSquared(Point3D point3D) {
-        return (this.get_x().get_coord() - point3D.get_x().get_coord()) * (this._x.get_coord() - point3D.get_x().get_coord()) +
-                (this._y.get_coord() - point3D.get_Y().get_coord()) * (this._y.get_coord() - point3D.get_Y().get_coord()) +
-                (this._z.get_coord() - point3D.get_z().get_coord()) * (this._z.get_coord() - point3D.get_z().get_coord());
+        return (_x._coord - point3D._x._coord) * (_x._coord - point3D._x._coord) +
+                (_y._coord - point3D._y._coord) * (_y._coord - point3D._y._coord) +
+                (_z._coord - point3D._z._coord) * (_z._coord - point3D._z._coord);
     }
 
 
