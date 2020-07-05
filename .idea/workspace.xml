@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2d57631-cd98-4b0b-9d61-aa70327b6201" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Star of David ✡.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fianlTest.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/fianlTest.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/elements/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/elements/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Coordinate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Coordinate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Point3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Point3D.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Ray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Ray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Vector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/primitives/Vector.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/renderer/Render.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jctSoftwareEngineer/renderer/Render.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shadow with transparency Black.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/finalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/finalTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trianglesSphere.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/trianglesSphere.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="recitation6" />
+        <entry key="$PROJECT_DIR$" value="recitation7" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,23 +58,7 @@
       <recent name="C:\Users\baruch\IdeaProjects\jctSoftwareEngineer1\src\unittests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.finalTest">
-    <configuration name="ReflectionRefractionTests.trianglesTransparentSphere" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="jctSoftwareEngineer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.ReflectionRefractionTests" />
-      <option name="METHOD_NAME" value="trianglesTransparentSphere" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.finalTest.sphereDirectional">
     <configuration name="ShadowTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jctSoftwareEngineer" />
       <extension name="coverage">
@@ -91,6 +70,22 @@
       <option name="PACKAGE_NAME" value="unittests" />
       <option name="MAIN_CLASS_NAME" value="unittests.ShadowTests" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShadowTests.trianglesSphere" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jctSoftwareEngineer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.ShadowTests" />
+      <option name="METHOD_NAME" value="trianglesSphere" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.finalTest" />
-        <item itemvalue="JUnit.ReflectionRefractionTests.trianglesTransparentSphere" />
         <item itemvalue="JUnit.finalTest.sphereDirectional" />
-        <item itemvalue="JUnit.ShadowTests" />
+        <item itemvalue="JUnit.ShadowTests.trianglesSphere" />
+        <item itemvalue="JUnit.finalTest" />
         <item itemvalue="JUnit.unittests in jctSoftwareEngineer" />
+        <item itemvalue="JUnit.ShadowTests" />
       </list>
     </recent_temporary>
   </component>
@@ -285,34 +280,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="154" key="FileChooserDialogImpl/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591864416858" />
-    <state width="1638" height="296" key="GridCell.Tab.0.bottom" timestamp="1593706102896">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1493" height="97" key="GridCell.Tab.0.bottom" timestamp="1593885231251">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="71" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593680406122" />
+    <state width="1493" height="97" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593885231251" />
     <state width="1638" height="296" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1593706102896" />
-    <state width="1493" height="131" key="GridCell.Tab.0.bottom/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593630236732" />
-    <state width="1493" height="465" key="GridCell.Tab.0.bottom/1920.0.1536.824/0.0.1536.824@1920.0.1536.824" timestamp="1593359079479" />
-    <state width="1638" height="296" key="GridCell.Tab.0.center" timestamp="1593706102893">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1493" height="70" key="GridCell.Tab.0.bottom/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593719385127" />
+    <state width="1493" height="70" key="GridCell.Tab.0.bottom/1920.0.1536.824/0.0.1536.824@1920.0.1536.824" timestamp="1593713333251" />
+    <state width="1493" height="97" key="GridCell.Tab.0.center" timestamp="1593885231250">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="71" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593680406122" />
+    <state width="1493" height="97" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593885231250" />
     <state width="1638" height="296" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1593706102893" />
-    <state width="1493" height="131" key="GridCell.Tab.0.center/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593630236731" />
-    <state width="1493" height="465" key="GridCell.Tab.0.center/1920.0.1536.824/0.0.1536.824@1920.0.1536.824" timestamp="1593359079479" />
-    <state width="1638" height="296" key="GridCell.Tab.0.left" timestamp="1593706102892">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1493" height="70" key="GridCell.Tab.0.center/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593719385127" />
+    <state width="1493" height="70" key="GridCell.Tab.0.center/1920.0.1536.824/0.0.1536.824@1920.0.1536.824" timestamp="1593713333251" />
+    <state width="1493" height="97" key="GridCell.Tab.0.left" timestamp="1593885231250">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="71" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593680406122" />
+    <state width="1493" height="97" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593885231250" />
     <state width="1638" height="296" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1593706102892" />
-    <state width="1493" height="131" key="GridCell.Tab.0.left/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593630236731" />
-    <state width="1493" height="465" key="GridCell.Tab.0.left/1920.0.1536.824/0.0.1536.824@1920.0.1536.824" timestamp="1593359079479" />
-    <state width="1638" height="296" key="GridCell.Tab.0.right" timestamp="1593706102895">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1493" height="70" key="GridCell.Tab.0.left/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593719385127" />
+    <state width="1493" height="70" key="GridCell.Tab.0.left/1920.0.1536.824/0.0.1536.824@1920.0.1536.824" timestamp="1593713333251" />
+    <state width="1493" height="97" key="GridCell.Tab.0.right" timestamp="1593885231251">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="71" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593680406122" />
+    <state width="1493" height="97" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593885231251" />
     <state width="1638" height="296" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1593706102895" />
-    <state width="1493" height="131" key="GridCell.Tab.0.right/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593630236732" />
-    <state width="1493" height="465" key="GridCell.Tab.0.right/1920.0.1536.824/0.0.1536.824@1920.0.1536.824" timestamp="1593359079479" />
+    <state width="1493" height="70" key="GridCell.Tab.0.right/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593719385127" />
+    <state width="1493" height="70" key="GridCell.Tab.0.right/1920.0.1536.824/0.0.1536.824@1920.0.1536.824" timestamp="1593713333251" />
     <state width="1638" height="364" key="GridCell.Tab.1.bottom" timestamp="1593704206223">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -387,15 +382,16 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591864009565" />
-    <state x="592" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593589267921">
+    <state x="592" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593715545148">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="592" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1591962766659" />
-    <state x="592" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593589267921" />
-    <state x="1920" y="8" width="1249" height="569" maximized="true" key="dock-window-1" timestamp="1593602446841">
-      <screen x="1920" y="0" width="1536" height="824" />
+    <state x="592" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593715545148" />
+    <state x="541" y="229" width="1199" height="713" key="dock-window-1" timestamp="1593768628572">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="1920" y="8" width="1249" height="569" maximized="true" key="dock-window-1/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593602446841" />
+    <state x="541" y="229" width="1199" height="713" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1593768628572" />
+    <state x="1920" y="0" width="1199" height="713" key="dock-window-1/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593764076705" />
     <state x="1913" y="-7" width="1249" height="643" maximized="true" key="dock-window-2" timestamp="1593626769638">
       <screen x="1920" y="0" width="1536" height="824" />
     </state>
@@ -404,6 +400,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="477" y="11" width="581" height="801" key="find.popup/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593352386688" />
+    <state x="517" y="125" key="git4idea.branch.GitSmartOperationDialog" timestamp="1593707335768">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="517" y="125" key="git4idea.branch.GitSmartOperationDialog/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593707335768" />
     <state x="209" y="33" key="new project wizard" timestamp="1591863795527">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -412,10 +412,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="481" y="170" key="refactoring.ChangeSignatureDialog/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591895224924" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1593597287739">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1593783291954">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1591960163341" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1593783291954" />
     <state x="425" y="187" key="run.anything.popup/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1593597287739" />
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1593700898936">
       <screen x="0" y="0" width="1680" height="1050" />
